@@ -33,8 +33,7 @@
 .bar-label{font-size:11px;color:#8b949e;margin-bottom:3px;display:flex;justify-content:space-between}
 .bar-track{height:7px;background:#21262d;border-radius:4px;overflow:hidden;margin-bottom:8px}
 .bar-fill{height:100%;border-radius:4px}
-.bblue{background:#388bfd}
-.borange{background:#ff8c00}
+.bblue{background:#388bfd}.borange{background:#ff8c00}
 .tag{font-size:10px;padding:2px 6px;border-radius:8px;margin-left:5px}
 .tag-new{background:rgba(63,185,80,.15);color:#3fb950;border:1px solid rgba(63,185,80,.25)}
 .tag-abs{background:rgba(248,81,73,.1);color:#f85149;border:1px solid rgba(248,81,73,.2)}
@@ -48,6 +47,33 @@ td.total-col{color:#e6edf3;font-weight:500}
 tr:hover td{background:#1c2128}
 tr.total-row td{background:#1c2128;color:#e6edf3;font-weight:500;border-top:1px solid #30363d}
 .switch-row{display:flex;gap:6px;margin-bottom:12px}
+
+/* 结论模块 */
+.conclusion{background:#161b22;border:1px solid #21262d;border-radius:10px;padding:20px;margin-bottom:20px}
+.conclusion-title{font-size:13px;font-weight:500;color:#e6edf3;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.conclusion-title::before{content:'';display:inline-block;width:3px;height:14px;background:#388bfd;border-radius:2px;flex-shrink:0}
+.conclusion-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.c-card{border-radius:8px;padding:14px;border:1px solid}
+.c-card.confirmed{background:rgba(56,139,253,.06);border-color:rgba(56,139,253,.2)}
+.c-card.caution{background:rgba(255,140,0,.06);border-color:rgba(255,140,0,.2)}
+.c-card.missing{background:rgba(139,148,158,.06);border-color:rgba(139,148,158,.2)}
+.c-card.action{background:rgba(63,185,80,.06);border-color:rgba(63,185,80,.2)}
+.c-card-title{font-size:11px;font-weight:500;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.c-card.confirmed .c-card-title{color:#79c0ff}
+.c-card.caution .c-card-title{color:#ffa94d}
+.c-card.missing .c-card-title{color:#8b949e}
+.c-card.action .c-card-title{color:#3fb950}
+.c-card-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.c-card.confirmed .c-card-dot{background:#388bfd}
+.c-card.caution .c-card-dot{background:#ff8c00}
+.c-card.missing .c-card-dot{background:#6e7681}
+.c-card.action .c-card-dot{background:#3fb950}
+.c-item{font-size:12px;color:#8b949e;line-height:1.8;padding-left:12px;position:relative}
+.c-item::before{content:'·';position:absolute;left:2px;color:#484f58}
+.verdict{background:rgba(56,139,253,.08);border:1px solid rgba(56,139,253,.2);border-radius:8px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
+.verdict-icon{width:18px;height:18px;border-radius:50%;background:#388bfd;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:11px;color:#fff;font-weight:600}
+.verdict-text{font-size:12px;color:#8b949e;line-height:1.7}
+.verdict-text strong{color:#c9d1d9;font-weight:500}
 </style>
 
 <div class="dash">
@@ -112,49 +138,81 @@ tr.total-row td{background:#1c2128;color:#e6edf3;font-weight:500;border-top:1px 
     </div>
   </div>
 
-  <div style="font-size:11px;color:#484f58;margin-top:12px;text-align:center">仅供内部参考 · 数据来源：有赞/微信小程序后台</div>
+  <!-- 分析结论 -->
+  <div class="sec-title">分析结论</div>
+  <div class="conclusion">
+    <div class="conclusion-title">618 vs 双十一：销售额下降的成因分析</div>
+    <div class="conclusion-grid">
+      <div class="c-card confirmed">
+        <div class="c-card-title"><span class="c-card-dot"></span>数据可确认</div>
+        <div class="c-item">销售额下降 9.3%，但订单数反增 2.6%</div>
+        <div class="c-item">客单价从 ¥651 降至 ¥575，降幅 11.6%</div>
+        <div class="c-item">陈芊蓉缺席，双十一贡献 ¥42.3万，618为零</div>
+        <div class="c-item">新增 3 位教练合计贡献 ¥24.6万，部分弥补缺口</div>
+      </div>
+      <div class="c-card caution">
+        <div class="c-card-title"><span class="c-card-dot"></span>结构性因素（非消费能力）</div>
+        <div class="c-item">618 折扣节奏偏向小额/体验装，客单价天然偏低</div>
+        <div class="c-item">人员结构变化（缺席+新增）本身可解释大部分差距</div>
+        <div class="c-item">双活跃教练中卿卿 +86.7%、慧慧 +6.6%，消费未普遍下滑</div>
+        <div class="c-item">鲍风亚 -25.3%、Amber -81.9% 需个案追踪</div>
+      </div>
+      <div class="c-card missing">
+        <div class="c-card-title"><span class="c-card-dot"></span>现有数据无法判断</div>
+        <div class="c-item">订单缺少社群归属标签，无法定位老群用户</div>
+        <div class="c-item">缺乏群活跃状态与销售额的关联数据</div>
+        <div class="c-item">无法区分"老用户消费变少"与"新用户稀释均值"</div>
+        <div class="c-item">缺同一批用户跨活动期的复购对比</div>
+      </div>
+      <div class="c-card action">
+        <div class="c-card-title"><span class="c-card-dot"></span>验证路径建议</div>
+        <div class="c-item">补充用户 ID 维度，匹配老群成员在两期的订单</div>
+        <div class="c-item">拉取群活跃度标签（L6/沉默/流失）与消费记录交叉</div>
+        <div class="c-item">对比同一用户两次活动的客单价及购买品类变化</div>
+        <div class="c-item">排除新客后，重新计算老客复购率和人均消费</div>
+      </div>
+    </div>
+    <div class="verdict">
+      <div class="verdict-icon">结</div>
+      <div class="verdict-text">
+        <strong>当前结论：销售额下降由客单价下滑、人员结构变化和活动节奏共同驱动，尚不能直接确认低互动老群用户消费能力下降。</strong>
+        该命题的验证需要补充用户归属标签、群活跃状态与跨期复购数据，在获得这些数据前，不建议据此调整老群运营策略。
+      </div>
+    </div>
+  </div>
+
+  <div style="font-size:11px;color:#484f58;text-align:center">仅供内部参考 · 数据来源：有赞/微信小程序后台</div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
 const d11daily=[213523.61,288472.34,248909.96,117529.16,185652.4,87908.9,87098.37,116854.76,98227.59,33543.2,69794.13,57022.06,29719.9,125823.3,57873.26,19374.66,27024.42,30039.13,47172,67365.67,80208.85,155814.91];
 const d618daily=[301879.14,179079.88,108491.71,61888.18,63394.21,294913.8,49123.6,64181.24,44841.93,24384.06,38953.05,27901.13,115917.52,30754.73,26480.72,18999.93,13635.2,16787.62,164683.52,99050.94,68031.68,67321.55,48681.18,107248.4];
+const maxLen=Math.max(22,24);
+const xLabels=Array.from({length:maxLen},(_,i)=>`第${i+1}天`);
 const labels11=['10/10','10/11','10/12','10/13','10/14','10/15','10/16','10/17','10/18','10/19','10/20','10/21','10/22','10/23','10/24','10/25','10/26','10/27','10/28','10/29','10/30','10/31'];
 const labels618=['5/8','5/9','5/10','5/11','5/12','5/13','5/14','5/15','5/16','5/17','5/18','5/19','5/20','5/21','5/22','5/23','5/24','5/25','5/26','5/27','5/28','5/29','5/30','5/31'];
-const maxLen=Math.max(labels11.length,labels618.length);
-const xLabels=Array.from({length:maxLen},(_,i)=>`第${i+1}天`);
 const cum11=d11daily.reduce((a,v,i)=>[...a,(a[i-1]||0)+v],[]);
 const cum618=d618daily.reduce((a,v,i)=>[...a,(a[i-1]||0)+v],[]);
-
 const coaches=[
-  {name:'陈芊蓉',d11:422852.95,d618:0,chg:-100},
-  {name:'王娜',d11:370659.78,d618:355088.2,chg:-4.2},
-  {name:'郭美汐',d11:365781.8,d618:295814.57,chg:-19.1},
-  {name:'沫沫',d11:328325.4,d618:312629.13,chg:-4.8},
-  {name:'慧慧',d11:308487.83,d618:328721.82,chg:6.6},
-  {name:'鲍风亚',d11:231847.93,d618:173251.71,chg:-25.3},
-  {name:'卿卿',d11:169424.39,d618:316307.26,chg:86.7},
-  {name:'Amber',d11:47572.5,d618:8602.5,chg:-81.9},
-  {name:'杜芳玉',d11:0,d618:141173.52,chg:null},
-  {name:'杜一鸣',d11:0,d618:83003.2,chg:null},
-  {name:'王璇',d11:0,d618:22033.01,chg:null},
+  {name:'陈芊蓉',d11:422852.95,d618:0,chg:-100},{name:'王娜',d11:370659.78,d618:355088.2,chg:-4.2},
+  {name:'郭美汐',d11:365781.8,d618:295814.57,chg:-19.1},{name:'沫沫',d11:328325.4,d618:312629.13,chg:-4.8},
+  {name:'慧慧',d11:308487.83,d618:328721.82,chg:6.6},{name:'鲍风亚',d11:231847.93,d618:173251.71,chg:-25.3},
+  {name:'卿卿',d11:169424.39,d618:316307.26,chg:86.7},{name:'Amber',d11:47572.5,d618:8602.5,chg:-81.9},
+  {name:'杜芳玉',d11:0,d618:141173.52,chg:null},{name:'杜一鸣',d11:0,d618:83003.2,chg:null},{name:'王璇',d11:0,d618:22033.01,chg:null},
 ];
 const maxS=Math.max(...coaches.map(c=>Math.max(c.d11,c.d618)));
 function fmt(v){if(v>=10000)return'¥'+(v/10000).toFixed(1)+'万';if(v>0)return'¥'+Math.round(v).toLocaleString();return'¥0';}
-
 const grid=document.getElementById('coachGrid');
 coaches.forEach(c=>{
   const w11=(c.d11/maxS*100).toFixed(1),w618=(c.d618/maxS*100).toFixed(1);
   const tag=c.d11===0?`<span class="tag tag-new">新增</span>`:c.d618===0?`<span class="tag tag-abs">未参与618</span>`:'';
-  grid.innerHTML+=`<div class="ccard">
-    <div class="cname">营养教练-${c.name}${tag}</div>
+  grid.innerHTML+=`<div class="ccard"><div class="cname">营养教练-${c.name}${tag}</div>
     <div class="bar-label"><span style="color:#79c0ff">双十一</span><span style="color:#79c0ff">${fmt(c.d11)}</span></div>
     <div class="bar-track"><div class="bar-fill bblue" style="width:${w11}%"></div></div>
     <div class="bar-label"><span style="color:#ffa94d">618</span><span style="color:#ffa94d">${fmt(c.d618)}</span></div>
-    <div class="bar-track"><div class="bar-fill borange" style="width:${w618}%"></div></div>
-  </div>`;
+    <div class="bar-track"><div class="bar-fill borange" style="width:${w618}%"></div></div></div>`;
 });
-
 const detail11=[
   {date:'10/10',Amber:1970,卿卿:25234,慧慧:46316.9,沫沫:37785.7,王娜:21707.7,郭美汐:29115,陈芊蓉:38664.9,鲍风亚:12729.41},
   {date:'10/11',Amber:5442,卿卿:11402.38,慧慧:39474.29,沫沫:55188.13,王娜:38138.56,郭美汐:52857,陈芊蓉:65355.62,鲍风亚:20614.36},
@@ -180,7 +238,6 @@ const detail11=[
   {date:'10/31',Amber:3067,卿卿:9311.5,慧慧:18415.1,沫沫:19011.75,王娜:28776.36,郭美汐:29173.8,陈芊蓉:30166,鲍风亚:17893.4},
 ];
 const cols11=['Amber','卿卿','慧慧','沫沫','王娜','郭美汐','陈芊蓉','鲍风亚'];
-
 const detail618=[
   {date:'5/8',Amber:0,卿卿:36451.2,慧慧:48973.69,杜一鸣:8068,杜芳玉:24870.45,沫沫:51368.29,王娜:61442.12,王璇:5239.27,郭美汐:40863.42,鲍风亚:24602.7},
   {date:'5/9',Amber:4753.9,卿卿:24424.9,慧慧:22882,杜一鸣:7313.7,杜芳玉:11162.58,沫沫:21953.7,王娜:30048.8,王璇:6769.9,郭美汐:42607.4,鲍风亚:7163},
@@ -214,7 +271,6 @@ function fmtCell(v){
   if(v>=10000)return'<span style="color:#c9d1d9">¥'+(v/10000).toFixed(1)+'万</span>';
   return'<span style="color:#8b949e">¥'+Math.round(v).toLocaleString()+'</span>';
 }
-
 function renderTable(mode){
   const tbl=document.getElementById('detailTable');
   const data=mode==='618'?detail618:detail11;
@@ -222,21 +278,18 @@ function renderTable(mode){
   let html='<thead><tr><th>日期</th>';
   cols.forEach(c=>{html+=`<th>${c}</th>`;});
   html+='<th style="color:#e6edf3">当日合计</th></tr></thead><tbody>';
-  let totals={};cols.forEach(c=>totals[c]=0);let grandTotal=0;
+  let totals={};cols.forEach(c=>totals[c]=0);let grand=0;
   data.forEach(r=>{
-    const rowTotal=cols.reduce((s,c)=>s+(r[c]||0),0);
-    grandTotal+=rowTotal;
+    const rt=cols.reduce((s,c)=>s+(r[c]||0),0);grand+=rt;
     html+=`<tr><td>${r.date}</td>`;
     cols.forEach(c=>{totals[c]+=(r[c]||0);html+=`<td>${fmtCell(r[c]||0)}</td>`;});
-    html+=`<td class="total-col">¥${(rowTotal/10000).toFixed(1)}万</td></tr>`;
+    html+=`<td class="total-col">¥${(rt/10000).toFixed(1)}万</td></tr>`;
   });
   html+='<tr class="total-row"><td>合计</td>';
   cols.forEach(c=>{html+=`<td>¥${(totals[c]/10000).toFixed(1)}万</td>`;});
-  html+=`<td>¥${(grandTotal/10000).toFixed(1)}万</td></tr>`;
-  html+='</tbody>';
+  html+=`<td>¥${(grand/10000).toFixed(1)}万</td></tr></tbody>`;
   tbl.innerHTML=html;
 }
-
 let chart=null;
 function switchChart(mode,btn){
   document.querySelectorAll('.tab-bar .tab').forEach(b=>b.classList.remove('on'));
@@ -245,41 +298,27 @@ function switchChart(mode,btn){
   const ctx=document.getElementById('mainChart').getContext('2d');
   const s11=mode==='daily'?d11daily.map(v=>+(v/10000).toFixed(2)):cum11.map(v=>+(v/10000).toFixed(2));
   const s618=mode==='daily'?d618daily.map(v=>+(v/10000).toFixed(2)):cum618.map(v=>+(v/10000).toFixed(2));
-  chart=new Chart(ctx,{
-    type:'line',
-    data:{
-      labels:xLabels,
-      datasets:[
-        {label:'双十一',data:s11,borderColor:'#388bfd',backgroundColor:'rgba(56,139,253,.07)',borderWidth:2,pointRadius:3,pointBackgroundColor:'#388bfd',tension:.3,fill:mode==='cum',spanGaps:false},
-        {label:'618',data:s618,borderColor:'#ffa94d',backgroundColor:'rgba(255,140,0,.05)',borderWidth:2,borderDash:[5,4],pointRadius:3,pointBackgroundColor:'#ffa94d',tension:.3,fill:false,spanGaps:false}
-      ]
-    },
-    options:{
-      responsive:true,maintainAspectRatio:false,
-      interaction:{mode:'index',intersect:false},
-      plugins:{
-        legend:{display:false},
-        tooltip:{backgroundColor:'#1c2128',borderColor:'#30363d',borderWidth:1,titleColor:'#8b949e',bodyColor:'#c9d1d9',
-          callbacks:{
-            title:items=>`${items[0].label}（${items[0].dataIndex<labels11.length?labels11[items[0].dataIndex]:'—'} / ${items[0].dataIndex<labels618.length?labels618[items[0].dataIndex]:'—'}）`,
-            label:ctx=>`${ctx.dataset.label}: ¥${ctx.parsed.y!=null?ctx.parsed.y.toFixed(1):'—'}万`
-          }
-        }
-      },
-      scales:{
-        x:{grid:{color:'rgba(255,255,255,.05)'},ticks:{color:'#6e7681',font:{size:10},maxTicksLimit:24,autoSkip:false,maxRotation:0}},
-        y:{grid:{color:'rgba(255,255,255,.05)'},ticks:{color:'#6e7681',font:{size:10},callback:v=>`¥${v}万`}}
+  chart=new Chart(ctx,{type:'line',data:{labels:xLabels,datasets:[
+    {label:'双十一',data:s11,borderColor:'#388bfd',backgroundColor:'rgba(56,139,253,.07)',borderWidth:2,pointRadius:3,pointBackgroundColor:'#388bfd',tension:.3,fill:mode==='cum'},
+    {label:'618',data:s618,borderColor:'#ffa94d',backgroundColor:'rgba(255,140,0,.05)',borderWidth:2,borderDash:[5,4],pointRadius:3,pointBackgroundColor:'#ffa94d',tension:.3,fill:false}
+  ]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+    plugins:{legend:{display:false},tooltip:{backgroundColor:'#1c2128',borderColor:'#30363d',borderWidth:1,titleColor:'#8b949e',bodyColor:'#c9d1d9',
+      callbacks:{
+        title:items=>`${items[0].label}（${items[0].dataIndex<22?'双十一 '+labels11[items[0].dataIndex]:'—'} / ${items[0].dataIndex<24?'618 '+labels618[items[0].dataIndex]:'—'}）`,
+        label:ctx=>`${ctx.dataset.label}: ¥${ctx.parsed.y!=null?ctx.parsed.y.toFixed(1):'—'}万`
       }
+    }},
+    scales:{
+      x:{grid:{color:'rgba(255,255,255,.05)'},ticks:{color:'#6e7681',font:{size:10},maxTicksLimit:24,autoSkip:false,maxRotation:0}},
+      y:{grid:{color:'rgba(255,255,255,.05)'},ticks:{color:'#6e7681',font:{size:10},callback:v=>`¥${v}万`}}
     }
-  });
+  }});
 }
-
 function switchDetail(mode,btn){
   document.querySelectorAll('.switch-row .tab').forEach(b=>b.classList.remove('on'));
   btn.classList.add('on');
   renderTable(mode);
 }
-
 switchChart('daily',document.querySelector('.tab-bar .tab.on'));
 renderTable('618');
 </script>
