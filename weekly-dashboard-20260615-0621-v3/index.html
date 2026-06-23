@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>营养教练团队周报数据看板</title>
+<style>
+:root{--nav:#18384b;--bg:#f4f6f7;--panel:#fff;--line:#dbe3e7;--text:#17232d;--muted:#687681;--blue:#2475a9;--green:#16826b;--red:#bf4646;--amber:#ad6814}
+*{box-sizing:border-box}body{margin:0;font:14px/1.55 "Microsoft YaHei","PingFang SC",Arial,sans-serif;color:var(--text);background:var(--bg)}
+header{background:var(--nav);color:#fff;padding:22px 28px 16px;position:sticky;top:0;z-index:9;box-shadow:0 2px 12px #0002}.head{max-width:1500px;margin:auto;display:flex;justify-content:space-between;gap:20px}.head h1{font-size:26px;margin:0 0 5px}.head p{margin:0;color:#d2e0e7}.period{border:1px solid #ffffff40;padding:9px 12px;border-radius:5px;white-space:nowrap}
+nav{max-width:1500px;margin:14px auto 0;display:flex;gap:7px;overflow:auto}.tab{border:1px solid #ffffff55;background:transparent;color:#fff;border-radius:4px;padding:8px 13px;font-weight:700;cursor:pointer}.tab.active{background:#fff;color:var(--nav)}
+main{max-width:1500px;margin:auto;padding:20px 24px 50px}.page{display:none}.page.active{display:block}h2{font-size:21px;margin:0 0 12px}h3{font-size:16px;margin:21px 0 10px}.sub{color:var(--muted);margin:-7px 0 14px}
+.notice{border-left:4px solid var(--amber);background:#fff5e6;padding:11px 13px;margin-bottom:14px}.scope{border-left-color:var(--blue);background:#edf6fb}.cards{display:grid;grid-template-columns:repeat(5,minmax(170px,1fr));gap:10px}.card,.panel{background:#fff;border:1px solid var(--line);border-radius:6px}.card{padding:13px;min-height:101px}.label{font-size:12px;color:var(--muted)}.value{font-size:23px;font-weight:800;margin:8px 0 3px}.delta{font-size:12px}.up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.panel{padding:15px}.conclusions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.conclusion{background:#fff;border-left:4px solid var(--blue);padding:12px 14px;box-shadow:0 0 0 1px var(--line)}
+.table-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:6px}table{border-collapse:collapse;width:100%;min-width:1200px}th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}th{background:#edf2f4;color:#344b58;font-size:12px;position:sticky;top:0;z-index:1}th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}tr:hover td{background:#f7fafb}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px}input,select{height:35px;border:1px solid #bac7ce;border-radius:4px;background:#fff;padding:0 9px}.tag{display:inline-block;padding:2px 7px;border-radius:4px;font-size:12px;font-weight:700}.a{background:#e1f2eb;color:#14715c}.b{background:#e7eef7;color:#2b6090}.c{background:#fae6e6;color:#9d3b3b}.warn{background:#fff0d9;color:#925a0d}.risk{background:#fbe5e5;color:#a53b3b}
+.chart{height:260px;width:100%}.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:7px;color:var(--muted)}.dot{display:inline-block;width:10px;height:10px;margin-right:5px}.rank{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.rank-item{padding:11px;border:1px solid var(--line);border-radius:5px;background:#fff}.rank-item strong{display:block;margin-bottom:4px}.small{font-size:12px;color:var(--muted)}
+footer{margin-top:25px;color:var(--muted);border-top:1px solid var(--line);padding-top:15px}
+@media(max-width:1050px){.cards{grid-template-columns:repeat(3,1fr)}.grid2,.conclusions,.rank{grid-template-columns:1fr}.head{display:block}.period{margin-top:10px}}@media(max-width:620px){header{padding:17px 12px}.head h1{font-size:21px}main{padding:15px 10px}.cards{grid-template-columns:repeat(2,1fr)}.value{font-size:19px}}
+</style>
+</head>
+<body>
+<header><div class="head"><div><h1>营养教练团队周报数据看板</h1><p>飞书多维表格《社群核心数据》｜三个销售口径独立展示</p></div><div class="period"><b>本周：</b>2026-06-15~2026-06-21<br><span class="small" style="color:#d2e0e7"><b>对比周：</b>2026-06-08~2026-06-14</span></div></div>
+<nav><button class="tab active" data-page="overview">团队总览</button><button class="tab" data-page="coach">教练维度</button><button class="tab" data-page="structure">销售结构</button><button class="tab" data-page="group">群维度</button><button class="tab" data-page="trend">近4周趋势</button><button class="tab" data-page="review">重点复核</button></nav></header>
+<main>
+<section id="overview" class="page active">
+<div class="notice"><b>有效统计天数提醒：</b>本周为 5 天，上周为 6 天。日均指标可直接比较；群消息、用户消息、教练消息等周总量受少统计 1 天影响，不能仅凭总量变化判断业务表现。</div>
+<h2>数据口径说明</h2>
+<div class="grid2">
+<div class="panel"><b>教练有赞成交额</b><p>取教练表“教练有赞销售额”，反映通过教练有赞成交链路记录的结果。</p><b>数云（有赞）销售额</b><p>已绑定有赞会员的社群用户全部有赞成交，包含自然进店、朋友圈、教练链接及其他路径，不等于教练贡献。</p></div>
+<div class="panel"><b>数云（全平台）销售额</b><p>取原群引导有效金额的全平台成交口径，与前两项分开展示。</p><b>数据边界</b><p>未绑定有赞会员的用户成交无法计入数云（有赞）销售额；绑定率较低时，该口径可能漏统计。</p></div>
+</div>
+<h3>团队整体概况</h3><div id="cards" class="cards"></div>
+<h3>核心结论</h3>
+<div class="conclusions">
+<div class="conclusion"><b>三个销售口径变化方向不同。</b>教练有赞成交额下降 44.9%，数云（有赞）销售额增长 39.3%，数云（全平台）销售额增长 74.1%。说明绑定会员成交更多来自非教练有赞成交链路，但不能据此评价个人能力。</div>
+<div class="conclusion"><b>销售路径结构变化明显。</b>教练有赞成交占绑定会员总成交比例由 15.35% 降至 6.07%，销售差额扩大至 150,485.22 元。</div>
+<div class="conclusion"><b>日均活跃提升，日均消息结构分化。</b>教练维度日均活跃合计增长 15.4%，教练日均消息合计增长 24.2%；用户日均消息合计下降 48.7%，需检查字段计算或内容节奏变化。</div>
+<div class="conclusion"><b>绑定基础小幅改善。</b>整体绑定率由 31.98% 升至 32.40%，提升 0.42 个百分点，但仍有约三分之二成员未绑定，数云（有赞）口径存在统计边界。</div>
+<div class="conclusion"><b>工作量不宜只看周总量。</b>工作量均值下降 18.0%，但郭美汐达到 61.7 分、处于接近饱和状态；本周统计天数不同，需要结合日均与特殊事务判断。</div>
+<div class="conclusion"><b>数据异常需先复核。</b>本周全体质检分值为空；杜一鸣、鲍风亚私聊为 0；4 个群教练发送消息为 0。</div>
+</div>
+</section>
+
+<section id="coach" class="page">
+<h2>教练维度：销售与工作量</h2><p class="sub">绑定人数按群表“当前带群教练”汇总；工作量状态优先使用飞书原表。</p>
+<div class="filters"><input id="coachSearch" placeholder="搜索教练"><select id="coachSort"><option value="syYz">按数云（有赞）销售额</option><option value="coachYz">按教练有赞成交额</option><option value="gap">按销售差额</option><option value="rate">按成交占比</option><option value="bindRate">按绑定率</option><option value="work">按工作量分</option></select></div>
+<div class="table-wrap"><table><thead><tr><th>教练</th><th>群数</th><th>群成员</th><th>绑定人数</th><th>绑定率</th><th>工作量分</th><th>工作量状态</th><th>本周教练有赞成交额</th><th>上周</th><th>环比</th><th>本周数云（有赞）</th><th>上周</th><th>环比</th><th>销售差额</th><th>教练有赞成交占比</th><th>本周数云（全平台）</th><th>上周</th><th>环比</th><th>质检</th><th>特殊事务</th></tr></thead><tbody id="coachBody"></tbody></table></div>
+<h3>教练销售结构观察</h3><div id="coachNotes" class="rank"></div>
+</section>
+
+<section id="structure" class="page">
+<h2>教练销售结构横向对比</h2><div class="notice scope">比例高低只说明成交路径结构，不命名为贡献率、转化率或绩效归因率。</div>
+<div class="grid2"><div class="panel"><h3>数云（有赞）与教练有赞成交额</h3><div id="coachSalesChart" class="chart"></div><div class="legend"><span><i class="dot" style="background:#2475a9"></i>数云（有赞）</span><span><i class="dot" style="background:#16826b"></i>教练有赞成交额</span></div></div>
+<div class="panel"><h3>绑定率与教练有赞成交占比</h3><div id="coachRateChart" class="chart"></div><div class="legend"><span><i class="dot" style="background:#ad6814"></i>绑定率</span><span><i class="dot" style="background:#bf4646"></i>教练有赞成交占比</span></div></div></div>
+<h3>结构识别</h3><div class="rank">
+<div class="rank-item"><strong>数云（有赞）高、教练有赞成交相对低</strong>郭美汐、王哲、王娜。描述为“销售路径以非教练有赞成交链路为主”，不判断为未承接。</div>
+<div class="rank-item"><strong>绑定率较低</strong>杜芳玉 26.38%、刘絮菁 28.59%。数云（有赞）销售额可能遗漏较多未绑定用户成交。</div>
+<div class="rank-item"><strong>两类销售均下降</strong>秦慧敏、郭美汐、王哲、王娜、杜芳玉；其中数云（全平台）并非全部下降，需区分路径。</div>
+<div class="rank-item"><strong>教练有赞下降、绑定会员成交增长</strong>刘絮菁、秦慧敏、郭美汐、王哲、王娜、杜芳玉等，提示成交路径结构迁移。</div>
+</div>
+</section>
+
+<section id="group" class="page">
+<h2>群维度分析</h2><p class="sub">群表已存在“数云统计有赞销售额”，本页直接使用原表，不估算。下表聚焦重点复核与代表性群。</p>
+<div class="filters"><input id="groupSearch" placeholder="搜索群名称"><select id="groupCoach"><option value="">全部教练</option></select><select id="groupType"><option value="">全部群类型</option><option value="科普">科普群</option><option value="自免">自免群</option><option value="陪跑">陪跑群</option></select><select id="groupABC"><option value="">全部ABC</option><option>A</option><option>B</option><option>C</option></select><select id="groupSort"><option value="score">按综合分</option><option value="syYz">按数云（有赞）</option><option value="syAll">按数云（全平台）</option><option value="active">按活跃人数</option><option value="user">按用户消息</option></select></div>
+<div class="table-wrap"><table><thead><tr><th>群名称</th><th>当前教练</th><th>群类型</th><th>ABC</th><th>关键短板</th><th>活跃人数</th><th>用户消息量</th><th>教练消息量</th><th>数云（全平台）</th><th>数云（有赞）</th><th>绑定人数</th><th>绑定率</th><th>活跃率</th><th>综合分</th><th>复核提示</th></tr></thead><tbody id="groupBody"></tbody></table></div>
+<h3>TOP5 与重点识别</h3><div class="grid2"><div class="panel"><b>综合表现 TOP5</b><ol><li>断糖计划陪跑1群：综合分 97.76，高活跃、高绑定。</li><li>营养科普56群：综合分 96.38，数云两类销售与活跃规模较高。</li><li>自免病友交流1群：综合分 94.91，绑定率与活跃率较高。</li><li>营养科普49群：综合分 87.24，绑定率 60.81%。</li><li>营养科普51群：综合分 84.74，活跃与消息表现较好。</li></ol></div>
+<div class="panel"><b>重点复核</b><ul><li>科普33群：用户消息高，但两类销售较低，复核转化链路。</li><li>科普14群：用户消息量高，销售相对有限，复核内容到成交衔接。</li><li>科普12、2、13、31群：教练发送消息为 0，先查采集和服务节奏。</li><li>绑定率低且销售有规模的群：科普7、6、5群等，提示数云（有赞）可能不完整。</li></ul></div></div>
+</section>
+
+<section id="trend" class="page">
+<h2>近4周趋势</h2><div class="notice">5月25日当周销售显著高于后续周，可能受活动周期影响；本周有效统计天数为 5 天，活跃与消息总量趋势不作无提示硬比。</div>
+<div class="grid2"><div class="panel"><h3>三个销售口径</h3><div id="salesTrend" class="chart"></div><div class="legend"><span><i class="dot" style="background:#2475a9"></i>数云（全平台）</span><span><i class="dot" style="background:#ad6814"></i>数云（有赞）</span><span><i class="dot" style="background:#16826b"></i>教练有赞成交</span></div></div>
+<div class="panel"><h3>销售路径比例</h3><div id="ratioTrend" class="chart"></div><div class="legend"><span><i class="dot" style="background:#bf4646"></i>教练有赞成交占绑定会员总成交比例</span></div></div></div>
+<h3>日均工作指标（最近两周）</h3><div class="panel"><div id="dailyTrend" class="chart"></div><div class="legend"><span><i class="dot" style="background:#2475a9"></i>教练日均消息合计</span><span><i class="dot" style="background:#ad6814"></i>日均活跃合计</span><span><i class="dot" style="background:#16826b"></i>用户日均消息合计</span></div></div>
+</section>
+
+<section id="review" class="page">
+<h2>重点复核与数据异常</h2>
+<div class="grid2"><div class="panel"><span class="tag risk">第一优先级</span><h3>更像真实业务信号</h3><ul><li>秦慧敏：教练有赞成交额下降 62.5%，数云（有赞）增长 21.4%，需复核成交路径结构变化。</li><li>王娜：数云（全平台）增长明显，但教练有赞成交下降，需拆群核对路径和活动贡献。</li><li>科普33、14群：用户消息高但销售相对低，复核内容到成交链路。</li></ul></div>
+<div class="panel"><span class="tag warn">第二优先级</span><h3>结合背景谨慎判断</h3><ul><li>郭美汐：工作量 61.7，接近饱和，同时承担特殊事务 10 分。</li><li>本周有效统计天数 5 天，所有周总量变化均需按天数解释。</li><li>交接群、新群及陪跑群不与成熟科普群直接硬比。</li></ul></div>
+<div class="panel"><span class="tag b">第三优先级</span><h3>先查数据与口径</h3><ul><li>全体教练质检分值缺失，且质检存在约一周滞后。</li><li>杜一鸣、鲍风亚私聊人次和消息量为 0。</li><li>科普12、2、13、31群教练发送消息数为 0。</li><li>用户日均消息合计较上周明显下降，需确认公式与数据同步。</li></ul></div>
+<div class="panel"><h3>异常检查结果</h3><ul><li>教练群数与群表汇总：58 vs 58，一致。</li><li>未发现负数销售额。</li><li>未发现教练有赞成交额大于数云（有赞）销售额。</li><li>当前带群教练、承接教练：已抽取记录未见空值。</li></ul></div></div>
+</section>
+<footer>销售字段用于观察成交规模和路径结构，不直接等同于教练贡献。质检分值约滞后一周，仅作辅助参考。</footer>
+</main>
+<script>
+const cur={groups:58,members:27411,bound:8882,bindRate:.3240305,active:1229,activeRate:.044836,userMsg:14213,coachMsg:6665,groupMsg:28958,pay:659,first:30307.72,repurchase:254267.98,coachYz:9732.75,syYz:160217.97,syAll:279228.3,gap:150485.22,pathRate:.0607469};
+const prev={groups:58,members:27206,bound:8700,bindRate:.3197824,active:1197,activeRate:.0439976,userMsg:33197,coachMsg:6442,groupMsg:null,pay:null,first:null,repurchase:null,coachYz:17660.52,syYz:115023.28,syAll:160353.83,gap:97362.76,pathRate:.153539};
+const money=n=>"¥"+Number(n).toLocaleString("zh-CN",{maximumFractionDigits:2}),num=n=>Number(n).toLocaleString("zh-CN",{maximumFractionDigits:2});
+const change=(a,b,point=false)=>{if(b===null||b===0||b===undefined)return '<span class="delta flat">—</span>';let d=point?(a-b)*100:(a-b)/b*100;return `<span class="delta ${d>0?"up":d<0?"down":"flat"}">${d>0?"+":""}${d.toFixed(1)}${point?" 个百分点":"%"}</span>`};
+const cardDefs=[["总群数","groups"],["群成员数","members"],["整体绑定率","bindRate","rate"],["群活跃人数","active"],["整体活跃率","activeRate","rate"],["用户消息量","userMsg"],["教练消息量","coachMsg"],["教练有赞成交额","coachYz","money"],["数云（有赞）销售额","syYz","money"],["数云（全平台）销售额","syAll","money"],["销售差额","gap","money"],["教练有赞成交占比","pathRate","rate"],["付款客户数","pay"],["首购金额","first","money"],["复购金额","repurchase","money"]];
+document.querySelector("#cards").innerHTML=cardDefs.map(([l,k,t])=>`<div class="card"><div class="label">${l}</div><div class="value">${t==="money"?money(cur[k]):t==="rate"?(cur[k]*100).toFixed(2)+"%":num(cur[k])}</div>${change(cur[k],prev[k],t==="rate")}</div>`).join("");
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tab,.page").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.getElementById(b.dataset.page).classList.add("active")});
+const coaches=[
+{n:"刘絮菁",g:9,m:4376,b:1251,w:37.9,s:"未饱和，仍有承接空间",cy:1650,pcy:1730,sy:24890.9,psy:14314.91,sa:39940.06,psa:21711.49,q:"—",x:5},
+{n:"秦慧敏",g:10,m:4631,b:1519,w:30.9,s:"未饱和，仍有承接空间",cy:1726.9,pcy:4600.23,sy:20021.71,psy:16494.2,sa:33814.77,psa:22546.91,q:"—",x:0},
+{n:"郭美汐",g:7,m:3132,b:1139,w:61.7,s:"接近饱和，可少量承接",cy:544.6,pcy:1995.83,sy:26869.2,psy:18626.75,sa:61755.49,psa:29978.42,q:"—",x:10},
+{n:"王哲",g:11,m:5324,b:1623,w:49.8,s:"未饱和，仍有承接空间",cy:604.8,pcy:2202,sy:26545.51,psy:24015.11,sa:34821.23,psa:26762.36,q:"—",x:0},
+{n:"王娜",g:10,m:4769,b:1549,w:36.5,s:"未饱和，仍有承接空间",cy:1720.64,pcy:3640.48,sy:25136.91,psy:19364.3,sa:46089.88,psa:24468.88,q:"—",x:2},
+{n:"杜芳玉",g:3,m:1463,b:386,w:15.8,s:"未饱和，仍有承接空间",cy:397,pcy:698.8,sy:11080.9,psy:3762.21,sa:13027.9,psa:6374.51,q:"—",x:0},
+{n:"杜一鸣",g:4,m:1911,b:719,w:26.4,s:"未饱和，仍有承接空间",cy:2517.81,pcy:2355.7,sy:13444.54,psy:8325.1,sa:24146.2,psa:15752.11,q:"—",x:0},
+{n:"鲍风亚",g:4,m:1805,b:696,w:50.3,s:"未饱和，仍有承接空间",cy:571,pcy:437.48,sy:12228.3,psy:10120.7,sa:25632.77,psa:12759.15,q:"—",x:25}
+].map(x=>({...x,bindRate:x.b/x.m,gap:x.sy-x.cy,path:x.sy?x.cy/x.sy:null}));
+function renderCoach(){let q=document.querySelector("#coachSearch").value.trim(),sort=document.querySelector("#coachSort").value;let rows=coaches.filter(x=>!q||x.n.includes(q)).sort((a,b)=>({syYz:b.sy-a.sy,coachYz:b.cy-a.cy,gap:b.gap-a.gap,rate:b.path-a.path,bindRate:b.bindRate-a.bindRate,work:b.w-a.w})[sort]);document.querySelector("#coachBody").innerHTML=rows.map(x=>`<tr><td>${x.n}</td><td>${x.g}</td><td>${num(x.m)}</td><td>${num(x.b)}</td><td>${(x.bindRate*100).toFixed(2)}%</td><td>${x.w}</td><td>${x.s}</td><td>${money(x.cy)}</td><td>${money(x.pcy)}</td><td>${change(x.cy,x.pcy)}</td><td>${money(x.sy)}</td><td>${money(x.psy)}</td><td>${change(x.sy,x.psy)}</td><td>${money(x.gap)}</td><td>${(x.path*100).toFixed(2)}%</td><td>${money(x.sa)}</td><td>${money(x.psa)}</td><td>${change(x.sa,x.psa)}</td><td>${x.q}</td><td>${x.x}</td></tr>`).join("")}
+["coachSearch","coachSort"].forEach(id=>document.getElementById(id).addEventListener(id==="coachSearch"?"input":"change",renderCoach));renderCoach();
+document.querySelector("#coachNotes").innerHTML=[...coaches].sort((a,b)=>b.gap-a.gap).slice(0,4).map((x,i)=>`<div class="rank-item"><strong>${i+1}. ${x.n}｜销售差额 ${money(x.gap)}</strong>绑定率 ${(x.bindRate*100).toFixed(2)}%，教练有赞成交占比 ${(x.path*100).toFixed(2)}%。差额仅代表成交路径差异。</div>`).join("");
+const groups=[
+{n:"营养科普56群",c:"郭美汐",t:"科普",a:"A",s:"无明显短板",act:93,u:1865,cm:873,all:35092.77,yz:11977.7,b:262,m:498,score:96.38,note:"高活跃、高销售；新群阶段需结合结构"},
+{n:"断糖计划陪跑1群",c:"郭美汐",t:"陪跑",a:"A",s:"无明显短板",act:32,u:435,cm:305,all:9675.82,yz:2048.6,b:152,m:229,score:97.76,note:"高绑定、高活跃"},
+{n:"自免病友交流1群",c:"鲍风亚",t:"自免",a:"A",s:"无明显短板",act:38,u:538,cm:145,all:11969.01,yz:3782,b:188,m:338,score:94.91,note:"表现较稳定"},
+{n:"营养科普49群",c:"王哲",t:"科普",a:"A",s:"无明显短板",act:24,u:65,cm:61,all:7497,yz:2111,b:287,m:472,score:87.24,note:"绑定率高"},
+{n:"营养科普51群",c:"秦慧敏",t:"科普",a:"A",s:"无明显短板",act:39,u:741,cm:249,all:6195.52,yz:3342.81,b:257,m:486,score:84.74,note:"活跃与消息较高"},
+{n:"科普25群",c:"王娜",t:"科普",a:"A",s:"无明显短板",act:23,u:57,cm:44,all:7833.2,yz:3842.2,b:144,m:481,score:74.22,note:"销售规模较好"},
+{n:"科普36群",c:"刘絮菁",t:"科普",a:"B",s:"无明显短板",act:12,u:84,cm:50,all:10071.01,yz:7961,b:161,m:486,score:73.45,note:"销售较高、活跃偏低需观察"},
+{n:"科普33群",c:"王哲",t:"科普",a:"C",s:"ARPU低",act:37,u:1319,cm:259,all:734,yz:523,b:133,m:478,score:33.36,note:"高消息、低销售，优先复核转化"},
+{n:"科普14群",c:"鲍风亚",t:"科普",a:"A",s:"无明显短板",act:30,u:1718,cm:109,all:6253.3,yz:4190.3,b:162,m:494,score:75.26,note:"消息高，复核成交效率"},
+{n:"科普12群",c:"刘絮菁",t:"科普",a:"C",s:"ARPU低",act:5,u:7,cm:0,all:1477.1,yz:498.1,b:129,m:482,score:16.9,note:"教练消息为0，先查数据"},
+{n:"科普2群",c:"秦慧敏",t:"科普",a:"B",s:"活跃低",act:7,u:14,cm:0,all:3428,yz:1161,b:129,m:482,score:35,note:"教练消息为0"},
+{n:"科普13群",c:"王哲",t:"科普",a:"C",s:"活跃低",act:6,u:5,cm:0,all:905.1,yz:905.1,b:134,m:482,score:18,note:"教练消息为0"},
+{n:"科普31群",c:"王娜",t:"科普",a:"C",s:"活跃低",act:11,u:25,cm:0,all:4692,yz:3950,b:133,m:479,score:28,note:"教练消息为0，销售需核路径"},
+{n:"科普5群",c:"秦慧敏",t:"科普",a:"B",s:"绑定低",act:15,u:57,cm:59,all:5010.01,yz:467,b:119,m:484,score:40,note:"绑定低且两类销售差异大"},
+{n:"科普7群",c:"王哲",t:"科普",a:"B",s:"绑定低",act:21,u:107,cm:87,all:7312.01,yz:7312.01,b:115,m:482,score:52.41,note:"绑定率低，数云有赞可能不完整"},
+{n:"科普22群",c:"杜芳玉",t:"科普",a:"B",s:"绑定低",act:12,u:84,cm:97,all:7796.9,yz:7054.9,b:127,m:487,score:53.1,note:"绑定率低但销售有规模"}
+].map(x=>({...x,br:x.b/x.m,ar:x.act/x.m}));
+const sel=document.querySelector("#groupCoach");[...new Set(groups.map(x=>x.c))].sort().forEach(x=>sel.insertAdjacentHTML("beforeend",`<option>${x}</option>`));
+function renderGroup(){let q=groupSearch.value.trim(),c=groupCoach.value,t=groupType.value,a=groupABC.value,sort=groupSort.value;let rows=groups.filter(x=>(!q||x.n.includes(q))&&(!c||x.c===c)&&(!t||x.t===t)&&(!a||x.a===a)).sort((x,y)=>({score:y.score-x.score,syYz:y.yz-x.yz,syAll:y.all-x.all,active:y.act-x.act,user:y.u-x.u})[sort]);groupBody.innerHTML=rows.map(x=>`<tr><td>${x.n}</td><td>${x.c}</td><td>${x.t}</td><td><span class="tag ${x.a.toLowerCase()}">${x.a}</span></td><td>${x.s}</td><td>${x.act}</td><td>${num(x.u)}</td><td>${num(x.cm)}</td><td>${money(x.all)}</td><td>${money(x.yz)}</td><td>${x.b}</td><td>${(x.br*100).toFixed(2)}%</td><td>${(x.ar*100).toFixed(2)}%</td><td>${x.score.toFixed(2)}</td><td>${x.note}</td></tr>`).join("")}
+["groupSearch","groupCoach","groupType","groupABC","groupSort"].forEach(id=>document.getElementById(id).addEventListener(id==="groupSearch"?"input":"change",renderGroup));renderGroup();
+function line(id,series,labels){const e=document.getElementById(id),W=640,H=235,p=42,vals=series.flatMap(s=>s.v),max=Math.max(...vals)*1.08||1,x=i=>p+i*(W-p*2)/(labels.length-1),y=v=>H-p-v/max*(H-p*2);let z=`<svg viewBox="0 0 ${W} ${H}" width="100%" height="100%">`;for(let i=0;i<5;i++){let yy=p+i*(H-p*2)/4;z+=`<line x1="${p}" y1="${yy}" x2="${W-p}" y2="${yy}" stroke="#dbe3e7"/><text x="4" y="${yy+4}" font-size="10" fill="#687681">${num(max*(4-i)/4)}</text>`}labels.forEach((l,i)=>z+=`<text x="${x(i)}" y="${H-8}" text-anchor="middle" font-size="11" fill="#687681">${l}</text>`);series.forEach(s=>{z+=`<polyline fill="none" stroke="${s.c}" stroke-width="3" points="${s.v.map((v,i)=>x(i)+","+y(v)).join(" ")}"/>`;s.v.forEach((v,i)=>z+=`<circle cx="${x(i)}" cy="${y(v)}" r="4" fill="${s.c}"><title>${s.n}: ${num(v)}</title></circle>`)});e.innerHTML=z+"</svg>"}
+function bars(id,series,percent=false){const e=document.getElementById(id),W=650,H=270,p=45,max=Math.max(...series.flatMap(s=>s.v))*1.12,x=i=>p+i*(W-p*2)/coaches.length,bw=(W-p*2)/coaches.length/3;let z=`<svg viewBox="0 0 ${W} ${H}" width="100%" height="100%">`;coaches.forEach((c,i)=>z+=`<text x="${x(i)+bw*1.6}" y="${H-8}" text-anchor="middle" font-size="10">${c.n}</text>`);series.forEach((s,j)=>s.v.forEach((v,i)=>{let h=v/max*(H-p*2);z+=`<rect x="${x(i)+j*bw}" y="${H-p-h}" width="${bw-2}" height="${h}" fill="${s.c}"><title>${s.n}: ${percent?(v*100).toFixed(2)+"%":money(v)}</title></rect>`}));e.innerHTML=z+"</svg>"}
+bars("coachSalesChart",[{n:"数云（有赞）",c:"#2475a9",v:coaches.map(x=>x.sy)},{n:"教练有赞成交",c:"#16826b",v:coaches.map(x=>x.cy)}]);
+bars("coachRateChart",[{n:"绑定率",c:"#ad6814",v:coaches.map(x=>x.bindRate)},{n:"教练有赞成交占比",c:"#bf4646",v:coaches.map(x=>x.path)}],true);
+const labels=["05/25","06/01","06/08","06/15"];line("salesTrend",[{n:"全平台",c:"#2475a9",v:[1378310.86,158275.51,160353.83,279228.3]},{n:"数云有赞",c:"#ad6814",v:[1321514.3,115545.45,115023.28,160217.97]},{n:"教练有赞",c:"#16826b",v:[569583.89,36212.19,17660.52,9732.75]}],labels);
+line("ratioTrend",[{n:"路径占比",c:"#bf4646",v:[.4310,.3134,.1535,.0607]}],labels);
+line("dailyTrend",[{n:"教练日均消息合计",c:"#2475a9",v:[1074,1334]},{n:"日均活跃合计",c:"#ad6814",v:[214,247]},{n:"用户日均消息合计",c:"#16826b",v:[5534,2841]}],["06/08","06/15"]);
+</script>
+</body></html>
