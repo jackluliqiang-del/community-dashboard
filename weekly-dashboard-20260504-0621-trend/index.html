@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>营养教练团队7周趋势看板</title>
+<style>
+:root{--nav:#19394c;--bg:#f4f6f7;--panel:#fff;--line:#dbe3e7;--text:#17232d;--muted:#687681;--blue:#2878ad;--green:#16816b;--red:#bf4848;--amber:#b16b14}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.55 "Microsoft YaHei","PingFang SC",Arial,sans-serif}
+header{background:var(--nav);color:#fff;padding:22px 28px 17px;position:sticky;top:0;z-index:8;box-shadow:0 2px 12px #0002}.head{max-width:1500px;margin:auto;display:flex;justify-content:space-between;gap:18px}.head h1{margin:0 0 5px;font-size:25px}.head p{margin:0;color:#d5e1e7}.period{border:1px solid #ffffff44;border-radius:5px;padding:9px 12px;white-space:nowrap}
+nav{max-width:1500px;margin:14px auto 0;display:flex;gap:7px;overflow:auto}.tab{border:1px solid #ffffff55;background:transparent;color:#fff;padding:8px 12px;border-radius:4px;font-weight:700;cursor:pointer}.tab.active{background:#fff;color:var(--nav)}
+main{max-width:1500px;margin:auto;padding:20px 24px 50px}.page{display:none}.page.active{display:block}h2{font-size:21px;margin:0 0 12px}h3{font-size:16px;margin:21px 0 10px}.sub{color:var(--muted);margin:-7px 0 14px}
+.notice{border-left:4px solid var(--amber);background:#fff5e6;padding:11px 13px;margin-bottom:14px}.blue{border-left-color:var(--blue);background:#eef6fa}.cards{display:grid;grid-template-columns:repeat(5,minmax(160px,1fr));gap:10px}.card,.panel{background:#fff;border:1px solid var(--line);border-radius:6px}.card{padding:13px;min-height:100px}.label{font-size:12px;color:var(--muted)}.value{font-size:23px;font-weight:800;margin:8px 0 3px}.delta{font-size:12px}.up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--muted)}
+.panel{padding:15px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.conclusions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.conclusion{background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue);padding:12px 14px}.conclusion b{display:block;margin-bottom:4px}.chart{height:285px;width:100%}.legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);margin-top:7px}.dot{display:inline-block;width:10px;height:10px;margin-right:5px}
+.table-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:6px}table{border-collapse:collapse;width:100%;min-width:1200px}th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}th{background:#edf2f4;color:#344b58;font-size:12px;position:sticky;top:0;z-index:1}th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}tbody tr:hover td{background:#f7fafb}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}input,select{height:35px;border:1px solid #bdc9d0;border-radius:4px;padding:0 9px;background:#fff}.tag{display:inline-block;padding:2px 7px;border-radius:4px;font-size:12px;font-weight:700}.good{background:#e0f2eb;color:#13705b}.warn{background:#fff0d8;color:#925a0b}.risk{background:#fae5e5;color:#a23a3a}.stage{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stage .panel strong{font-size:20px;display:block;margin:5px 0}.small{font-size:12px;color:var(--muted)}details{background:#fff;border:1px solid var(--line);padding:12px;border-radius:6px}summary{font-weight:700;cursor:pointer}footer{margin-top:25px;color:var(--muted)}
+@media(max-width:1050px){.cards{grid-template-columns:repeat(3,1fr)}.grid2,.conclusions,.stage{grid-template-columns:1fr}.head{display:block}.period{margin-top:10px}}@media(max-width:620px){header{padding:16px 11px}.head h1{font-size:21px}main{padding:14px 10px}.cards{grid-template-columns:repeat(2,1fr)}.value{font-size:19px}}
+</style>
+</head>
+<body>
+<header><div class="head"><div><h1>营养教练团队7周趋势看板</h1><p>飞书《社群核心数据》｜2026年5月4日—6月21日</p></div><div class="period"><b>大促期：</b>05/04—05/31<br><b>正常期：</b>06/01—06/21</div></div>
+<nav><button class="tab active" data-page="status">团队本周状态</button><button class="tab" data-page="stage">阶段对比</button><button class="tab" data-page="trend">7周趋势</button><button class="tab" data-page="coach">教练分析</button><button class="tab" data-page="group">群分析</button><button class="tab" data-page="review">复核建议</button></nav></header>
+<main>
+<section id="status" class="page active">
+<div class="notice"><b>业务背景：</b>5月为私域618大促月，产品、活动和销售触达频率较高；6月活动结束后进入正常运营。5月高值不能直接作为6月日常运营固定基准，也不能把阶段回落解释为教练个人能力变化。</div>
+<h2>团队本周状态</h2><div id="cards" class="cards"></div>
+<h3>核心结论与建议行动</h3><div class="conclusions">
+<div class="conclusion"><b>1. 大促结束后，动作与成交均出现团队性回落。</b>群发链接周均下降81.6%，教练有赞成交周均下降95.9%。<br><b>建议：</b>以6月三周建立日常运营基线，不以5月高峰作为固定目标。</div>
+<div class="conclusion"><b>2. 教练有赞成交回落幅度大于群发动作。</b>说明除动作减少外，活动力度、产品组合、朋友圈、私聊和历史链接等也可能影响结果。<br><b>建议：</b>复盘推荐内容与活动机制，不计算链接转化率。</div>
+<div class="conclusion"><b>3. 数云（有赞）与教练有赞成交并非始终同向。</b>6月15日当周，数云（有赞）增长39.3%，教练有赞成交下降44.9%。<br><b>建议：</b>两条销售线独立观察，不再计算两者占比。</div>
+<div class="conclusion"><b>4. 郭美汐本周动作增加但成交下降，方向不一致。</b>群发链接环比+33.3%，教练有赞成交-72.7%。<br><b>建议：</b>复核推荐产品、活动力度及成交是否来自其他链路。</div>
+<div class="conclusion"><b>5. 杜一鸣本周动作和成交同步小幅增长。</b>群发链接+22.9%，教练有赞成交+6.9%。<br><b>建议：</b>继续观察2—3周，暂不认定为稳定改善。</div>
+<div class="conclusion"><b>数据提醒。</b>本周仅5个有效统计日；质检缺失，杜一鸣、鲍风亚私聊为0。<br><b>建议：</b>周总量结合日均和岗位背景复核。</div>
+</div>
+<h3>团队核心数据</h3><div class="grid2"><div class="panel"><b>教练群内销售动作与结果</b><p>本周群发链接343次，环比-7.3%；教练有赞成交额9,732.75元，环比-44.9%。</p><p class="small">教练有赞成交还包括私聊、朋友圈、未进群用户和历史链接成交，群发链接只能辅助解释，不可计算转化率。</p></div><div class="panel"><b>社群绑定用户整体消费</b><p>绑定率32.40%；数云（有赞）销售额160,217.97元，环比+39.3%；首购30,307.72元，复购254,267.98元。</p><p class="small">该模块只观察已进群且已绑定会员用户消费，不评价教练主动推荐。</p></div></div>
+</section>
+
+<section id="stage" class="page">
+<h2>5月大促期与6月正常期周均对比</h2><p class="sub">阶段周数不同，统一使用周均值。</p>
+<div class="stage">
+<div class="panel"><span class="tag warn">群发链接次数</span><strong>2,010.3 → 370.3</strong><span class="down">周均下降 81.6%</span><p>大促结束后群内购买链接触达明显回归日常。</p></div>
+<div class="panel"><span class="tag risk">教练有赞成交额</span><strong>¥516,554.47 → ¥21,201.82</strong><span class="down">周均下降 95.9%</span><p>结果回落大于动作回落，需结合活动机制与其他成交链路解释。</p></div>
+<div class="panel"><span class="tag good">数云（有赞）销售额</span><strong>¥1,194,703.27 → ¥130,262.23</strong><span class="down">周均下降 89.1%</span><p>绑定用户整体消费同步回落，但最新一周较前周回升。</p></div>
+</div>
+<h3>阶段判断</h3><div class="grid2"><div class="panel"><b>合理的正常回落</b><p>所有8位当前教练的6月群发链接周均均低于5月，下降65.5%—87.3%，属于团队普遍现象。</p><p>6月教练有赞成交周均普遍下降87.5%—98.3%，主要呈阶段性变化。</p></div><div class="panel"><b>需要额外复核的偏离</b><p>郭美汐：本周链接增加但成交下降；鲍风亚：链接下降但成交小幅增长；杜一鸣：两项同步小幅增长。</p><p>这些是相对团队趋势的偏离信号，不是个人能力结论。</p></div></div>
+</section>
+
+<section id="trend" class="page">
+<h2>近7周团队趋势</h2>
+<div class="grid2"><div class="panel"><h3>群发链接次数与教练有赞成交额</h3><div id="actionChart" class="chart"></div><div class="legend"><span><i class="dot" style="background:#2878ad"></i>群发链接次数</span><span><i class="dot" style="background:#16816b"></i>教练有赞成交额（独立刻度）</span></div></div>
+<div class="panel"><h3>数云（有赞）销售额</h3><div id="syChart" class="chart"></div></div>
+<div class="panel"><h3>日均活跃、私聊人次与工作量</h3><div id="workChart" class="chart"></div><div class="legend"><span><i class="dot" style="background:#2878ad"></i>日均活跃合计</span><span><i class="dot" style="background:#16816b"></i>日均私聊人次合计</span><span><i class="dot" style="background:#b16b14"></i>工作量均值</span></div></div>
+<div class="panel"><h3>用户日均消息量合计</h3><div id="userChart" class="chart"></div><p class="small">6月15日当周明显下降，需优先核查字段同步和有效统计日影响。</p></div></div>
+</section>
+
+<section id="coach" class="page">
+<h2>教练维度：群内销售动作与结果</h2><div class="notice blue">教练有赞成交额还包括私聊、朋友圈、未进群用户及历史链接成交。群发链接次数只用于辅助解释，不计算转化率。</div>
+<div class="filters"><input id="coachSearch" placeholder="搜索教练"><select id="coachSort"><option value="junSales">按6月成交周均</option><option value="junLinks">按6月链接周均</option><option value="salesChange">按阶段成交变化</option><option value="latestSales">按本周成交环比</option></select></div>
+<div class="table-wrap"><table><thead><tr><th>教练</th><th>7周群发链接</th><th>7周教练有赞成交额</th><th>5月链接周均</th><th>6月链接周均</th><th>阶段变化</th><th>5月成交周均</th><th>6月成交周均</th><th>阶段变化</th><th>本周链接环比</th><th>本周成交环比</th><th>方向判断</th><th>本周建议</th></tr></thead><tbody id="coachBody"></tbody></table></div>
+</section>
+
+<section id="group" class="page">
+<h2>群维度：本周链接触达与消费表现</h2><p class="sub">群表原始字段“群内商品/活动链接发送次数”统一显示为“群发链接次数”。</p>
+<div class="filters"><input id="groupSearch" placeholder="搜索群名称"><select id="groupCoach"><option value="">全部教练</option></select><select id="groupFlag"><option value="">全部类型</option><option value="高触达">高触达</option><option value="零触达">零触达</option><option value="高消息低销售">高消息低销售</option><option value="稳定消费">稳定消费</option></select></div>
+<div class="table-wrap"><table><thead><tr><th>群名称</th><th>教练</th><th>本周链接</th><th>上周链接</th><th>变化</th><th>近7周趋势</th><th>活跃人数</th><th>用户消息</th><th>数云（有赞）销售</th><th>绑定率</th><th>分类</th><th>复核提示</th></tr></thead><tbody id="groupBody"></tbody></table></div>
+<h3>群维度识别</h3><div class="grid2"><div class="panel"><b>高触达群</b><p>营养56群29次、营养54群22次、营养55群15次。新群与高活跃群的触达次数明显高于低活跃老群。</p></div><div class="panel"><b>长期低/零触达需复核</b><p>科普12、20、13群本周为0；其中多为低活跃老群，需标记集中维护背景，不与正常维护群直接比较。</p></div><div class="panel"><b>高消息、销售相对低</b><p>科普33群：用户消息1,319、链接5次、数云（有赞）523元；科普14群：用户消息1,718、链接4次、数云（有赞）4,190.3元。</p></div><div class="panel"><b>链接少但消费仍较稳定</b><p>科普7群链接4次、数云（有赞）7,312.01元；科普22群链接6次、数云（有赞）7,054.9元。不能认定链接触达是唯一成交来源。</p></div></div>
+</section>
+
+<section id="review" class="page">
+<h2>重点复核与本周建议</h2>
+<div class="grid2"><div class="panel"><span class="tag risk">优先复核</span><h3>郭美汐</h3><p>链接+33.3%，成交-72.7%，动作和结果方向不一致。</p><b>建议：</b>复盘本周推荐产品、活动力度、群内用户需求匹配，并核对成交是否更多来自非群发场景。</div>
+<div class="panel"><span class="tag warn">谨慎判断</span><h3>鲍风亚</h3><p>链接-45.5%，成交+30.5%，成交未随群发动作减少而下降。</p><b>建议：</b>确认私聊、朋友圈、历史链接或老用户复购贡献，不认定群发链接无价值。</div>
+<div class="panel"><span class="tag good">连续观察</span><h3>杜一鸣</h3><p>链接+22.9%，成交+6.9%，动作和结果同步小幅增长。</p><b>建议：</b>保持当前动作，连续观察2—3周再判断是否形成稳定改善。</div>
+<div class="panel"><span class="tag risk">结果下降</span><h3>秦慧敏、王娜、王哲</h3><p>本周链接基本稳定或下降，教练有赞成交下降52.7%—72.5%。</p><b>建议：</b>结合活动结束背景，重点复核产品匹配与群内推荐节奏，不使用“能力下降”表述。</div></div>
+<h3>数据异常</h3><div class="panel"><ul><li>本周有效统计天数5天，上周6天，周总量比较需提示。</li><li>5月前3周包含王璇交接记录，团队教练数为9；后续为8。</li><li>本周全体质检分值缺失，且质检约滞后一周。</li><li>杜一鸣、鲍风亚私聊人次为0，先确认岗位与采集口径。</li><li>用户日均消息量合计由5,534降至2,841，建议核查数据同步。</li></ul></div>
+<h3>数据口径</h3><details><summary>展开查看</summary><p><b>群发链接次数：</b>群表字段“群内商品/活动链接发送次数”；教练表按统计周和当前带群教练汇总。用于观察群内商品或活动购买链接触达，不包括私聊、朋友圈、科普文章、视频号或普通资料链接。</p><p><b>教练有赞成交额：</b>可能包含群内、私聊、朋友圈、未进群用户及历史链接成交，不能完全归因于群发链接。</p><p><b>数云（有赞）销售额：</b>统计已进群且已绑定有赞会员用户产生的全部有赞销售，用于观察绑定用户整体消费，不评价教练主动推荐。</p><p><b>销售分析原则：</b>教练有赞成交额与数云（有赞）销售额作为两条独立分析线，不互相计算比例，也不生成销售贡献判断。</p></details>
+</section>
+<footer>数据来源：飞书多维表格《社群核心数据》。本看板不提供链接点击、去重触达、产品类型、私聊链接、客单价、退款金额或链接转化率。</footer>
+</main>
+<script>
+const WEEK_LABELS=["05/04","05/11","05/18","05/25","06/01","06/08","06/15"];
+const team=[
+{w:"05/04",links:1874,cy:612976.4,sy:1527209.35,active:264,user:6791,private:35,work:49.24},
+{w:"05/11",links:2237,cy:610497.32,sy:1321777.67,active:237,user:6723,private:39,work:46.84},
+{w:"05/18",links:1882,cy:273160.28,sy:608311.77,active:236,user:6510,private:34,work:46.06},
+{w:"05/25",links:2048,cy:569583.89,sy:1321514.3,active:237,user:6313,private:38,work:50.46},
+{w:"06/01",links:398,cy:36212.19,sy:115545.45,active:230,user:5305,private:32,work:50.19},
+{w:"06/08",links:370,cy:17660.52,sy:115023.28,active:214,user:5534,private:33,work:47.15},
+{w:"06/15",links:343,cy:9732.75,sy:160217.97,active:247,user:2841,private:11,work:38.66}
+];
+const fmt=n=>Number(n).toLocaleString("zh-CN",{maximumFractionDigits:2}),money=n=>"¥"+fmt(n),pct=(a,b)=>b?(a/b-1)*100:null;
+const delta=(a,b)=>{let d=pct(a,b);return d===null?'<span class="flat">—</span>':`<span class="${d>0?"up":d<0?"down":"flat"}">${d>0?"+":""}${d.toFixed(1)}%</span>`};
+const cur=team[6],pre=team[5];
+const cards=[["群发链接次数",cur.links,pre.links],["教练有赞成交额",cur.cy,pre.cy,"m"],["数云（有赞）销售额",cur.sy,pre.sy,"m"],["日均活跃人数合计",cur.active,pre.active],["用户日均消息合计",cur.user,pre.user],["日均私聊人次合计",cur.private,pre.private],["工作量均值",cur.work,pre.work],["整体绑定率",.3240305,.3197824,"r"],["首购金额",30307.72,null,"m"],["复购金额",254267.98,null,"m"]];
+document.querySelector("#cards").innerHTML=cards.map(([l,v,p,t])=>`<div class="card"><div class="label">${l}</div><div class="value">${t==="m"?money(v):t==="r"?(v*100).toFixed(2)+"%":fmt(v)}</div>${p===null?'<span class="flat">—</span>':t==="r"?`<span class="up">+${((v-p)*100).toFixed(2)} 个百分点</span>`:delta(v,p)}</div>`).join("");
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tab,.page").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.getElementById(b.dataset.page).classList.add("active")});
+const coaches=[
+{n:"鲍风亚",l:[120,165,138,153,33,33,18],s:[46317.48,46906.19,26738.03,56927.11,2573.9,437.48,571],ml:144,jl:28,lc:-80.6,ms:44222.2,js:1194.13,sc:-97.3,lw:-45.5,sw:30.5},
+{n:"杜芳玉",l:[106,127,112,108,17,23,18],s:[39017.96,43019.52,26759.77,34435,3293,698.8,397],ml:113.2,jl:19.3,lc:-82.9,ms:35808.06,js:1462.93,sc:-95.9,lw:-21.7,sw:-43.2},
+{n:"杜一鸣",l:[98,112,121,129,41,35,43],s:[19012.63,26822.7,9920.62,28646.65,3034.53,2355.7,2517.81],ml:115,jl:39.7,lc:-65.5,ms:21100.65,js:2636.01,sc:-87.5,lw:22.9,sw:6.9},
+{n:"郭美汐",l:[209,229,177,184,43,60,80],s:[99528.38,93298.22,40514.32,65067.95,1371.9,1995.83,544.6],ml:199.8,jl:61,lc:-69.5,ms:74602.22,js:1304.11,sc:-98.3,lw:33.3,sw:-72.7},
+{n:"刘絮菁",l:[299,383,307,358,51,43,36],s:[85950.7,111667.14,35007.08,96736.04,2550,1730,1650],ml:336.8,jl:43.3,lc:-87.1,ms:82340.24,js:1976.67,sc:-97.6,lw:-16.3,sw:-4.6},
+{n:"秦慧敏",l:[363,413,353,382,65,50,29],s:[99328.89,89552.2,45640.98,104808.25,7218,4600.23,1726.9],ml:377.8,jl:48,lc:-87.3,ms:84832.58,js:4515.04,sc:-94.7,lw:-42,sw:-62.5},
+{n:"王娜",l:[307,388,316,343,72,64,61],s:[113252.3,106266.19,49005.93,88644.66,11787.4,3640.48,1720.64],ml:338.5,jl:65.7,lc:-80.6,ms:89292.27,js:5716.17,sc:-93.6,lw:-4.7,sw:-52.7},
+{n:"王哲",l:[365,414,341,391,76,62,58],s:[95938.15,88613.96,37935.65,94318.23,4383.46,2202,604.8],ml:377.8,jl:65.3,lc:-82.7,ms:79201.5,js:2396.75,sc:-97,lw:-6.5,sw:-72.5}
+].map(x=>({...x,dir:(x.lw>=-10&&x.sw<-20)?"动作稳定、结果下降":(x.lw>0&&x.sw>0)?"动作和结果同步增长":(x.lw<0&&x.sw<0)?"动作和结果同步下降":"动作和结果方向不一致"}));
+const advice={鲍风亚:"核查私聊、朋友圈、复购或历史链接贡献。",杜芳玉:"确认本周推荐动作及活动承接，结合低统计天数复核。",杜一鸣:"保持当前动作，连续观察2—3周。",郭美汐:"复核推荐产品与用户需求、活动力度。",刘絮菁:"链接减少而成交相对稳定，复核成交来源结构。",秦慧敏:"动作与成交同步下降，复盘活动结束后的推荐节奏。",王娜:"动作基本稳定但成交下降，复盘产品匹配与活动力度。",王哲:"动作基本稳定但成交明显下降，拆群复核。"};
+function spark(v){let max=Math.max(...v),min=Math.min(...v),W=110,H=28;return `<svg viewBox="0 0 ${W} ${H}" width="110" height="28"><polyline fill="none" stroke="#2878ad" stroke-width="2" points="${v.map((x,i)=>`${i*W/(v.length-1)},${H-2-(x-min)/(max-min||1)*(H-4)}`).join(" ")}"/></svg>`}
+function renderCoach(){let q=coachSearch.value.trim(),sort=coachSort.value;let rows=coaches.filter(x=>!q||x.n.includes(q)).sort((a,b)=>({junSales:b.js-a.js,junLinks:b.jl-a.jl,salesChange:b.sc-a.sc,latestSales:b.sw-a.sw})[sort]);coachBody.innerHTML=rows.map(x=>`<tr><td>${x.n}</td><td>${spark(x.l)}</td><td>${spark(x.s)}</td><td>${x.ml}</td><td>${x.jl}</td><td class="down">${x.lc}%</td><td>${money(x.ms)}</td><td>${money(x.js)}</td><td class="down">${x.sc}%</td><td class="${x.lw>=0?"up":"down"}">${x.lw>0?"+":""}${x.lw}%</td><td class="${x.sw>=0?"up":"down"}">${x.sw>0?"+":""}${x.sw}%</td><td>${x.dir}</td><td>${advice[x.n]}</td></tr>`).join("")}
+["coachSearch","coachSort"].forEach(id=>document.getElementById(id).addEventListener(id==="coachSearch"?"input":"change",renderCoach));renderCoach();
+const groups=[
+{n:"营养科普56群",c:"郭美汐",now:29,pre:17,tr:[0,0,0,0,12,17,29],act:93,u:1865,sy:11977.7,br:.5261,f:"高触达",note:"新群、高活跃，单独看群阶段"},
+{n:"营养科普54群",c:"杜一鸣",now:22,pre:12,tr:[10,12,18,17,11,12,22],act:53,u:1838,sy:4416.6,br:.6202,f:"高触达",note:"触达增加，继续看消费变化"},
+{n:"营养科普55群",c:"王哲",now:15,pre:15,tr:[0,0,0,0,15,15,15],act:70,u:854,sy:3166,br:.232,f:"高触达",note:"链接较多、绑定率低"},
+{n:"科普33群",c:"王哲",now:5,pre:5,tr:[36,42,31,38,6,5,5],act:37,u:1319,sy:523,br:.2782,f:"高消息低销售",note:"消息高、销售低，优先复核"},
+{n:"科普14群",c:"鲍风亚",now:4,pre:8,tr:[32,36,27,31,7,8,4],act:30,u:1718,sy:4190.3,br:.3279,f:"高消息低销售",note:"用户消息高，复核成交衔接"},
+{n:"科普7群",c:"王哲",now:4,pre:6,tr:[35,38,29,34,5,6,4],act:21,u:107,sy:7312.01,br:.2386,f:"稳定消费",note:"链接少但消费仍有规模"},
+{n:"科普22群",c:"杜芳玉",now:6,pre:6,tr:[35,40,34,36,5,6,6],act:12,u:84,sy:7054.9,br:.2608,f:"稳定消费",note:"链接少、消费相对稳定"},
+{n:"科普12群",c:"刘絮菁",now:0,pre:1,tr:[20,26,22,24,1,1,0],act:5,u:7,sy:498.1,br:.2676,f:"零触达",note:"低活跃老群，先确认集中维护背景"},
+{n:"科普20群",c:"刘絮菁",now:0,pre:1,tr:[22,28,23,25,1,1,0],act:8,u:10,sy:1135,br:.2085,f:"零触达",note:"低活跃老群，谨慎比较"},
+{n:"科普13群",c:"王哲",now:0,pre:1,tr:[31,35,30,34,2,1,0],act:6,u:5,sy:905.1,br:.278,f:"零触达",note:"低活跃老群，先查维护策略"}
+];
+const cs=document.getElementById("groupCoach");[...new Set(groups.map(x=>x.c))].forEach(x=>cs.insertAdjacentHTML("beforeend",`<option>${x}</option>`));
+function renderGroup(){let q=groupSearch.value.trim(),c=groupCoach.value,f=groupFlag.value;groupBody.innerHTML=groups.filter(x=>(!q||x.n.includes(q))&&(!c||x.c===c)&&(!f||x.f===f)).map(x=>`<tr><td>${x.n}</td><td>${x.c}</td><td>${x.now}</td><td>${x.pre}</td><td>${x.now-x.pre>0?"+":""}${x.now-x.pre}</td><td>${spark(x.tr)}</td><td>${x.act}</td><td>${fmt(x.u)}</td><td>${money(x.sy)}</td><td>${(x.br*100).toFixed(2)}%</td><td><span class="tag ${x.f==="零触达"?"risk":x.f==="高触达"?"good":"warn"}">${x.f}</span></td><td>${x.note}</td></tr>`).join("")}
+["groupSearch","groupCoach","groupFlag"].forEach(id=>document.getElementById(id).addEventListener(id==="groupSearch"?"input":"change",renderGroup));renderGroup();
+function line(id,series){const e=document.getElementById(id),W=640,H=245,p=43,max=Math.max(...series.flatMap(s=>s.v))*1.08||1,x=i=>p+i*(W-p*2)/6,y=v=>H-p-v/max*(H-p*2);let z=`<svg viewBox="0 0 ${W} ${H}" width="100%" height="100%">`;for(let i=0;i<5;i++){let yy=p+i*(H-p*2)/4;z+=`<line x1="${p}" y1="${yy}" x2="${W-p}" y2="${yy}" stroke="#dbe3e7"/>`}WEEK_LABELS.forEach((l,i)=>z+=`<text x="${p+i*(W-p*2)/6}" y="${H-8}" text-anchor="middle" font-size="10">${l}</text>`);series.forEach(s=>{let vals=s.scale?s.v.map(v=>v/s.scale):s.v;let mm=Math.max(...vals)*1.08;let yy=v=>H-p-v/mm*(H-p*2);z+=`<polyline fill="none" stroke="${s.c}" stroke-width="3" points="${vals.map((v,i)=>`${p+i*(W-p*2)/6},${yy(v)}`).join(" ")}"/>`});e.innerHTML=z+"</svg>"}
+line("actionChart",[{c:"#2878ad",v:team.map(x=>x.links)},{c:"#16816b",v:team.map(x=>x.cy),scale:300}]);line("syChart",[{c:"#b16b14",v:team.map(x=>x.sy)}]);line("workChart",[{c:"#2878ad",v:team.map(x=>x.active)},{c:"#16816b",v:team.map(x=>x.private)},{c:"#b16b14",v:team.map(x=>x.work)}]);line("userChart",[{c:"#2878ad",v:team.map(x=>x.user)}]);
+</script>
+</body></html>
