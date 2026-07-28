@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>营养教练团队周数据看板｜业务口径校准版</title>
+<style>
+:root{--bg:#f5f7fb;--ink:#172033;--muted:#667085;--line:#d9e0ea;--brand:#17324d;--card:#fff;--blue:#2563eb;--green:#067647;--amber:#b45309;--red:#b42318}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,"Microsoft YaHei",sans-serif}header{background:var(--brand);color:white;padding:28px 36px}h1{margin:0 0 8px;font-size:28px}header p{margin:0;color:#d8e7ff}nav{position:sticky;top:0;z-index:2;background:white;border-bottom:1px solid var(--line);padding:10px 36px;display:flex;gap:10px;flex-wrap:wrap}nav a{color:#17324d;text-decoration:none;border:1px solid var(--line);padding:8px 12px;border-radius:6px;font-weight:700;font-size:14px}main{max-width:1500px;margin:auto;padding:24px 36px 64px}section{margin-bottom:30px}h2{margin:0 0 14px;font-size:22px}h3{font-size:17px;margin:0 0 10px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card,.panel{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;box-shadow:0 1px 2px rgba(16,24,40,.04)}.label{font-size:13px;color:var(--muted)}.value{font-size:24px;font-weight:800;margin:8px 0 3px}.sub,.small{font-size:12px;color:var(--muted);line-height:1.6}.notice{border-left:4px solid var(--amber);background:#fff7ed;border-radius:6px;padding:12px 14px;margin:12px 0}.ok{border-left-color:var(--green);background:#ecfdf3}.risk{border-left-color:var(--red);background:#fff1f3}.table-wrap{overflow:auto;background:white;border:1px solid var(--line);border-radius:8px}table{width:100%;border-collapse:collapse;min-width:1120px}th,td{border-bottom:1px solid #edf1f6;padding:9px 10px;text-align:left;font-size:13px;vertical-align:top}th{background:#f8fafc;color:#344054;white-space:nowrap}.legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:12px}.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px}.pill{display:inline-block;border-radius:999px;background:#edf4ff;color:#194185;padding:3px 8px;font-size:12px;font-weight:700;margin-right:6px}@media(max-width:900px){header,nav,main{padding-left:16px;padding-right:16px}.grid,.grid2{grid-template-columns:1fr}.value{font-size:20px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>营养教练团队周数据看板</h1>
+  <p>业务口径校准版｜分析周期：2026-07-06 至 2026-07-26｜数据源：飞书《社群核心数据》周数据底表</p>
+</header>
+<nav>
+  <a href="#overview">团队总览</a>
+  <a href="#activity">活动影响</a>
+  <a href="#trend">趋势</a>
+  <a href="#groups">群复核</a>
+  <a href="#coaches">教练负荷</a>
+  <a href="#actions">建议动作</a>
+  <a href="#notes">口径说明</a>
+</nav>
+<main>
+<section id="overview">
+  <h2>团队总览</h2>
+  <div class="notice risk">本看板不是自动标签版，而是按业务口径校准后的复核看板。7/20-7/26 同时覆盖 DK 活动尾段和电解质活动，销售变化不能简单归因为教练个人能力。</div>
+  <div class="grid"><div class="card"><div class="label">最新周期</div><div class="value">2026-07-20~2026-07-26</div><div class="sub">DK 尾段 + 电解质活动</div></div><div class="card"><div class="label">总群数</div><div class="value">61</div><div class="sub">上周 60</div></div><div class="card"><div class="label">群成员数</div><div class="value">27,907</div><div class="sub">绑定率 33.34%</div></div><div class="card"><div class="label">用户日均消息量合计</div><div class="value">2,637.8</div><div class="sub">较上周 14.2%</div></div><div class="card"><div class="label">教练日均消息量合计</div><div class="value">1,375.5</div><div class="sub">较上周 -13.9%</div></div><div class="card"><div class="label">工作量均值</div><div class="value">39.8</div><div class="sub">受统计对象变化影响，不能硬比</div></div><div class="card"><div class="label">数云有赞销售额</div><div class="value">¥425,081.93</div><div class="sub">较上周 73.7%</div></div><div class="card"><div class="label">教练有赞销售额</div><div class="value">¥69,042.58</div><div class="sub">较上周 10.4%</div></div><div class="card"><div class="label">发送链接次数</div><div class="value">361</div><div class="sub">较上周 -34.1%</div></div></div>
+</section>
+<section id="activity">
+  <h2>活动影响</h2>
+  <div class="table-wrap"><table><thead><tr><th>活动周期</th><th>活动类型</th><th>活动产品</th><th>影响周</th></tr></thead><tbody><tr><td>2026-07-01~2026-07-03</td><td>优惠购</td><td>O3</td><td>2026-06-29~2026-07-05</td></tr><tr><td>2026-07-15~2026-07-21</td><td>优惠购</td><td>DK</td><td>2026-07-13~2026-07-19、2026-07-20~2026-07-26</td></tr><tr><td>2026-07-22~2026-07-25</td><td>优惠购</td><td>电解质</td><td>2026-07-20~2026-07-26</td></tr></tbody></table></div>
+  <div class="notice">数云有赞销售额本周增长 73.7%，明显高于教练有赞销售额增长 10.4%；发送链接次数下降 -34.1%，但教练有赞销售仍增长。需要继续按产品或订单来源拆分 DK 与电解质活动贡献。</div>
+</section>
+<section id="trend">
+  <h2>三周核心趋势</h2>
+  <div class="grid2">
+    <div class="panel"><h3>销售趋势</h3><svg viewBox="0 0 760 250" width="100%" height="260" role="img"><polyline points="34,150.8977121657465 380,111.19994519644719 726,34" fill="none" stroke="#2563eb" stroke-width="3"/><circle cx="34" cy="150.8977121657465" r="4" fill="#2563eb"><title>2026-07-06~2026-07-12 数云有赞销售额: 152,053.9</title></circle><circle cx="380" cy="111.19994519644719" r="4" fill="#2563eb"><title>2026-07-13~2026-07-19 数云有赞销售额: 244,772.6</title></circle><circle cx="726" cy="34" r="4" fill="#2563eb"><title>2026-07-20~2026-07-26 数云有赞销售额: 425,081.9</title></circle><polyline points="34,207.56630266546497 380,189.2227229230845 726,186.43922906814694" fill="none" stroke="#059669" stroke-width="3"/><circle cx="34" cy="207.56630266546497" r="4" fill="#059669"><title>2026-07-06~2026-07-12 教练有赞销售额: 19,697.9</title></circle><circle cx="380" cy="189.2227229230845" r="4" fill="#059669"><title>2026-07-13~2026-07-19 教练有赞销售额: 62,541.4</title></circle><circle cx="726" cy="186.43922906814694" r="4" fill="#059669"><title>2026-07-20~2026-07-26 教练有赞销售额: 69,042.6</title></circle><text x="34" y="242" text-anchor="middle" font-size="12" fill="#667085">07-06至07-12</text><text x="380" y="242" text-anchor="middle" font-size="12" fill="#667085">07-13至07-19</text><text x="726" y="242" text-anchor="middle" font-size="12" fill="#667085">07-20至07-26</text></svg>
+    <div class="legend"><span><i style="background:#2563eb"></i>数云有赞销售额</span><span><i style="background:#059669"></i>教练有赞销售额</span></div></div>
+    <div class="panel"><h3>承接趋势</h3><svg viewBox="0 0 760 250" width="100%" height="260" role="img"><polyline points="34,51.559486952675826 380,56.68819106590004 726,34" fill="none" stroke="#2563eb" stroke-width="3"/><circle cx="34" cy="51.559486952675826" r="4" fill="#2563eb"><title>2026-07-06~2026-07-12 用户日均消息量合计: 2,383.3</title></circle><circle cx="380" cy="56.68819106590004" r="4" fill="#2563eb"><title>2026-07-13~2026-07-19 用户日均消息量合计: 2,309.0</title></circle><circle cx="726" cy="34" r="4" fill="#2563eb"><title>2026-07-20~2026-07-26 用户日均消息量合计: 2,637.8</title></circle><polyline points="34,109.53914197257853 380,105.82485625829278 726,121.09597523219814" fill="none" stroke="#059669" stroke-width="3"/><circle cx="34" cy="109.53914197257853" r="4" fill="#059669"><title>2026-07-06~2026-07-12 教练日均消息量合计: 1,543.0</title></circle><circle cx="380" cy="105.82485625829278" r="4" fill="#059669"><title>2026-07-13~2026-07-19 教练日均消息量合计: 1,596.8</title></circle><circle cx="726" cy="121.09597523219814" r="4" fill="#059669"><title>2026-07-20~2026-07-26 教练日均消息量合计: 1,375.5</title></circle><polyline points="34,212.81085065605188 380,213.03869084475895 726,213.25533834586466" fill="none" stroke="#d97706" stroke-width="3"/><circle cx="34" cy="212.81085065605188" r="4" fill="#d97706"><title>2026-07-06~2026-07-12 工作量均值: 46.2</title></circle><circle cx="380" cy="213.03869084475895" r="4" fill="#d97706"><title>2026-07-13~2026-07-19 工作量均值: 42.9</title></circle><circle cx="726" cy="213.25533834586466" r="4" fill="#d97706"><title>2026-07-20~2026-07-26 工作量均值: 39.8</title></circle><text x="34" y="242" text-anchor="middle" font-size="12" fill="#667085">07-06至07-12</text><text x="380" y="242" text-anchor="middle" font-size="12" fill="#667085">07-13至07-19</text><text x="726" y="242" text-anchor="middle" font-size="12" fill="#667085">07-20至07-26</text></svg>
+    <div class="legend"><span><i style="background:#2563eb"></i>用户日均消息量合计</span><span><i style="background:#059669"></i>教练日均消息量合计</span><span><i style="background:#d97706"></i>工作量均值</span></div></div>
+  </div>
+  <div class="notice">第一周为9名教练，后两周为10名，主要受邱楚芳教练身份纳入统计影响；工作量均值 46.2 → 42.9 → 39.8 不能直接硬解释为团队负荷持续下降。</div>
+</section>
+<section id="groups">
+  <h2>群维度复核</h2>
+  <div class="notice ok"><span class="pill">分类校准</span>改善群已从异常群中拆出。7群、17群、38群属于明显恢复或改善，应复盘可复制原因，而不是混入下降风险清单。</div>
+  <div class="table-wrap"><table><thead><tr><th>分类</th><th>群对象</th><th>三周活跃人数</th><th>三周用户消息</th><th>最新状态</th><th>判断</th><th>建议动作</th></tr></thead><tbody><tr><td>连续下降且最新低活跃</td><td>鸡侠的低碳生酮科普12群（邱楚芳（小野兽））</td><td>9 / 9 / 4</td><td>48 / 33 / 10</td><td>低活跃</td><td>优先判断自然衰退还是维护不足</td><td>当前带群教练补维护记录，运营负责人判断是否纳入集中维护或降频维护</td></tr><tr><td>连续下降且最新低活跃</td><td>鸡侠的低碳生酮科普37群（郭美汐）</td><td>21 / 16 / 14</td><td>202 / 117 / 85</td><td>低活跃</td><td>优先判断自然衰退还是维护不足</td><td>当前带群教练补维护记录，运营负责人判断是否纳入集中维护或降频维护</td></tr><tr><td>连续下降且最新低活跃</td><td>鸡侠的营养科普52群（刘絮菁）</td><td>18 / 17 / 15</td><td>201 / 126 / 56</td><td>低活跃</td><td>优先判断自然衰退还是维护不足</td><td>当前带群教练补维护记录，运营负责人判断是否纳入集中维护或降频维护</td></tr><tr><td>连续下降且最新低活跃</td><td>鸡侠的低碳生酮科普41群（杜一鸣）</td><td>11 / 8 / 5</td><td>64 / 103 / 46</td><td>低活跃</td><td>优先判断自然衰退还是维护不足</td><td>当前带群教练补维护记录，运营负责人判断是否纳入集中维护或降频维护</td></tr><tr><td>连续下降且最新低活跃</td><td>鸡侠的营养健康科普44群（杜一鸣）</td><td>9 / 8 / 6</td><td>16 / 18 / 11</td><td>低活跃</td><td>优先判断自然衰退还是维护不足</td><td>当前带群教练补维护记录，运营负责人判断是否纳入集中维护或降频维护</td></tr><tr><td>连续下降但尚未跌入低活跃</td><td>鸡侠的低碳生酮科普33群（王哲）</td><td>36 / 27 / 26</td><td>910 / 678 / 564</td><td>正常活跃</td><td>仍有活跃基础，但连续回落</td><td>复盘活动后自然回落、内容节奏和维护动作变化</td></tr><tr><td>连续下降但尚未跌入低活跃</td><td>鸡侠的营养科普54群（杜一鸣）</td><td>34 / 27 / 20</td><td>1,132 / 554 / 321</td><td>正常活跃</td><td>仍有活跃基础，但连续回落</td><td>复盘活动后自然回落、内容节奏和维护动作变化</td></tr><tr><td>连续下降但尚未跌入低活跃</td><td>鸡侠的营养科普55群（王哲）</td><td>40 / 39 / 36</td><td>961 / 1,032 / 658</td><td>正常活跃</td><td>仍有活跃基础，但连续回落</td><td>复盘活动后自然回落、内容节奏和维护动作变化</td></tr><tr><td>最新由正常转为低活跃</td><td>鸡侠的低碳生酮科普11群（刘絮菁）</td><td>12 / 14 / 10</td><td>158 / 466 / 99</td><td>低活跃</td><td>需要确认短期波动还是维护断点</td><td>先查统计异常、活动转场和话题断档</td></tr><tr><td>最新由正常转为低活跃</td><td>鸡侠的营养科普49群（王哲）</td><td>12 / 26 / 18</td><td>60 / 171 / 59</td><td>低活跃</td><td>需要确认短期波动还是维护断点</td><td>先查统计异常、活动转场和话题断档</td></tr><tr><td>最新由正常转为低活跃</td><td>鸡侠的低碳生酮科普48群（王娜）</td><td>7 / 16 / 14</td><td>23 / 206 / 36</td><td>低活跃</td><td>需要确认短期波动还是维护断点</td><td>先查统计异常、活动转场和话题断档</td></tr><tr><td>明显恢复或改善</td><td>鸡侠的低碳生酮科普7群（王哲）</td><td>10 / 9 / 21</td><td>69 / 55 / 172</td><td>正常活跃</td><td>不应混入异常下降清单</td><td>复盘改善原因，判断是否可复制到相似老群</td></tr><tr><td>明显恢复或改善</td><td>鸡侠的低碳生酮科普17群（刘絮菁）</td><td>13 / 13 / 21</td><td>52 / 76 / 482</td><td>正常活跃</td><td>不应混入异常下降清单</td><td>复盘改善原因，判断是否可复制到相似老群</td></tr><tr><td>明显恢复或改善</td><td>鸡侠的低碳生酮科普38群（秦慧敏）</td><td>17 / 11 / 17</td><td>94 / 63 / 151</td><td>正常活跃</td><td>不应混入异常下降清单</td><td>复盘改善原因，判断是否可复制到相似老群</td></tr></tbody></table></div>
+  <div class="notice">53群用户消息 1,286 → 144 → 364，51群 425 → 112 → 223，波动幅度较大，需先查原始聊天导入、集中讨论事件、活动期互动和归属变化。</div>
+</section>
+<section id="coaches">
+  <h2>教练维度承接负荷</h2>
+  <div class="table-wrap"><table><thead><tr><th>教练</th><th>三周工作量分值</th><th>最新负责群数</th><th>最新群人数</th><th>最新工作量</th><th>判断</th><th>建议动作</th></tr></thead><tbody><tr><td>秦慧敏</td><td>72 / 75 / 84</td><td>10</td><td>4,593</td><td>84.3</td><td>工作量已饱和</td><td>84.3，暂不新增承接，拆解工作量来源和高消息群来源</td></tr><tr><td>鲍风亚</td><td>62 / 56 / 55</td><td>2</td><td>856</td><td>54.6</td><td>带群负荷低不等于可加压</td><td>承担中台、质检和培训，需结合特殊事务判断整体承接空间</td></tr><tr><td>郭美汐</td><td>63 / 54 / 52</td><td>7</td><td>3,089</td><td>52.1</td><td>带群负荷低不等于可加压</td><td>承担带教、流程培训和风险兜底，需结合特殊事务判断</td></tr><tr><td>王哲</td><td>67 / 65 / 49</td><td>10</td><td>4,682</td><td>49.1</td><td>需拆群验证</td><td>工作量和消息下降，同时33群、55群连续下降，复核自然衰减、活动节奏或维护动作减少</td></tr><tr><td>杜芳玉</td><td>38 / 55 / 45</td><td>4</td><td>1,928</td><td>44.5</td><td>常规观察</td><td>按群维度变化继续观察</td></tr><tr><td>刘絮菁</td><td>36 / 32 / 38</td><td>7</td><td>3,360</td><td>37.5</td><td>常规观察</td><td>按群维度变化继续观察</td></tr><tr><td>邱楚芳</td><td>0 / 23 / 27</td><td>3</td><td>1,022</td><td>26.8</td><td>教练身份单独看</td><td>只评价教练身份承接稳定性，不与集中维护群合并</td></tr><tr><td>王娜</td><td>30 / 32 / 26</td><td>9</td><td>4,225</td><td>25.8</td><td>按正常工作评估</td><td>最近2周已结束婚假，重点看53群、48群等波动群</td></tr><tr><td>杜一鸣</td><td>27 / 19 / 12</td><td>4</td><td>1,846</td><td>11.7</td><td>不能只用正式首阶段解释</td><td>分别复核54群活动后回落、41群/44群老群衰退和教练消息下降</td></tr><tr><td>邱楚芳（小野兽）</td><td>20 / 19 / 11</td><td>5</td><td>2,306</td><td>11.4</td><td>集中维护身份单独看</td><td>只看集中维护专项效果，不合并计算邱楚芳个人带群工作量</td></tr></tbody></table></div>
+  <div class="notice">邱楚芳与邱楚芳（小野兽）必须拆开：前者是营养教练身份维护/承接群，后者是小助理身份执行集中维护老群，两者不能合并判断个人工作量，也不能重复计算群数和成员数。</div>
+</section>
+<section id="actions">
+  <h2>建议动作</h2>
+  <div class="table-wrap"><table><thead><tr><th>优先级</th><th>对象</th><th>负责人</th><th>复核内容</th><th>时间要求</th></tr></thead><tbody><tr><td>高</td><td>12群、37群、52群、41群、44群</td><td>当前带群教练 + 运营负责人</td><td>判断自然衰退、维护不足、是否纳入集中维护或降频维护</td><td>下次周报前给出人工结论</td></tr><tr><td>高</td><td>53群、51群</td><td>当前带群教练 + 数据同学</td><td>核查原始聊天导入、集中讨论事件、活动期互动、归属变化</td><td>先查数据，再写业务结论</td></tr><tr><td>高</td><td>秦慧敏</td><td>运营负责人</td><td>拆解84.3工作量来源，确认是否需要减压</td><td>本周暂不新增承接</td></tr><tr><td>中</td><td>鲍风亚、郭美汐、邱楚芳</td><td>运营负责人</td><td>补录中台、带教、培训、集中维护等特殊事务</td><td>补录后再判断承接空间</td></tr><tr><td>中</td><td>7群、17群、38群</td><td>当前带群教练</td><td>复盘改善原因，判断是否可复制到相似老群</td><td>下次周分析单列改善案例</td></tr><tr><td>中</td><td>老群生命周期</td><td>数据同学 + 运营负责人</td><td>补足6/29-7/5数据，按四周生命周期规则更新群状态</td><td>下次正式版前补齐</td></tr></tbody></table></div>
+</section>
+<section id="notes">
+  <h2>口径说明</h2>
+  <div class="panel">
+    <p>消息字段统一为“用户日均消息量合计”和“教练日均消息量合计”，避免误解为周累计消息量。</p>
+    <p>后续不再单独关注“用户有效消息量”，统一使用群表“群内客户发送消息总数”。</p>
+    <p>质检信息表已记录：https://n1kahgetd2.feishu.cn/wiki/J5tFwPUnniUaQvkAKxocg3k4nmc?from=from_copylink。当前看板不输出质检占位结论；后续飞书授权恢复后应直接读取质检信息表补充真实质检明细。</p>
+  </div>
+</section>
+</main>
+</body>
+</html>
