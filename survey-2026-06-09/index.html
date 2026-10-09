@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>2026年6-9月社群服务问卷分析看板</title>
+<style>
+:root {
+  --green:#0f766e; --green-light:#ccfbf1; --bg:#f8fafc; --text:#0f172a; --muted:#64748b; --border:#e2e8f0;
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif; background:var(--bg); color:var(--text); }
+header { padding:28px 36px; background:linear-gradient(135deg,#0f766e,#115e59); color:white; }
+header h1 { margin:0 0 8px; font-size:28px; }
+header p { margin:0; opacity:.9; }
+main { padding:28px 36px 64px; max-width:1280px; margin:auto; }
+.section { background:white; border:1px solid var(--border); border-radius:16px; padding:22px; margin-bottom:22px; box-shadow:0 6px 18px rgba(15,23,42,.04); }
+h2 { margin:0 0 16px; font-size:21px; color:#0f172a; }
+h3 { margin:0 0 14px; font-size:16px; color:#0f172a; }
+.grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+.grid2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.card { border:1px solid var(--border); background:#f8fafc; border-radius:14px; padding:16px; }
+.card .label { color:var(--muted); font-size:13px; }
+.card .value { font-size:28px; font-weight:700; margin-top:6px; color:var(--green); }
+.card .note { font-size:12px; color:var(--muted); margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:13px; }
+th,td { border-bottom:1px solid var(--border); padding:9px 10px; text-align:left; vertical-align:top; }
+th { background:#f1f5f9; font-weight:700; color:#334155; position:sticky; top:0; }
+tr:hover td { background:#f8fafc; }
+.chart { border:1px solid var(--border); border-radius:14px; padding:16px; background:#fff; }
+.bar-row { display:grid; grid-template-columns:210px 1fr 70px; align-items:center; gap:10px; margin:9px 0; font-size:13px; }
+.bar-wrap { height:18px; background:#e2e8f0; border-radius:999px; overflow:hidden; }
+.bar { height:100%; background:linear-gradient(90deg,#14b8a6,#0f766e); border-radius:999px; }
+.bar-value { text-align:right; color:#334155; font-variant-numeric:tabular-nums; }
+.insights { margin:0; padding-left:20px; line-height:1.8; }
+.badge { display:inline-block; background:#ecfeff; color:#0e7490; border:1px solid #a5f3fc; padding:3px 8px; border-radius:999px; font-size:12px; margin-left:6px; }
+.warn { background:#fffbeb; border-color:#fde68a; }
+.warn h2 { color:#92400e; }
+.small { color:var(--muted); font-size:12px; line-height:1.7; }
+@media (max-width:900px) { .grid,.grid2 { grid-template-columns:1fr; } .bar-row { grid-template-columns:130px 1fr 58px; } main, header { padding-left:16px; padding-right:16px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>2026年6-9月社群服务问卷分析看板</h1>
+  <p>样本来自各教练问卷分表；未计入“老群汇总”重复表。评分为4项5分制换算100分制。</p>
+</header>
+<main>
+<section class="section">
+  <h2>一、整体概览</h2>
+  <div class="grid">
+    <div class="card"><div class="label">总问卷数</div><div class="value">345</div><div class="note">老群 322，新群 23</div></div>
+    <div class="card"><div class="label">综合评分</div><div class="value">96.41</div><div class="note">四项评分均值</div></div>
+    <div class="card"><div class="label">帮助度</div><div class="value">93.51</div><div class="note">四项中最低</div></div>
+    <div class="card"><div class="label">有效建议</div><div class="value">113</div><div class="note">已剔除无建议/纯夸赞</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>二、核心结论</h2>
+  <ul class="insights">
+    <li><b>整体服务评价高，但区分度有限。</b>综合评分 96.41，友善耐心最高（98.20），帮助度最低（93.51）。后续不宜只看总分，应重点看“帮助度”和低分原因。</li>
+    <li><b>老群仍有使用价值。</b>251 人基本每天看群，占 78.0%；仅 4 人基本不看。</li>
+    <li><b>老群问题不是“没人看”，而是“看但不一定互动”。</b>232 人表示平时不经常发言，占 72.3%。主要原因是只想看内容、不习惯发言、没有特别想问的问题。</li>
+    <li><b>新群用户需求更偏明确任务。</b>新群样本中，控糖/代谢、减脂控重、产品吃法搭配是前三类需求，适合用“新人资料包 + 阶段答疑 + 产品搭配说明”承接。</li>
+    <li><b>用户建议集中在内容价值。</b>有效建议主分类中，专业科普/知识深度、饮食搭配/食谱、回复及时/服务承接排在前列。</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>三、教练评分汇总</h2>
+  <div class="grid2">
+    <div class='chart'><h3>教练综合评分</h3>
+        <div class="bar-row">
+          <div class="bar-label">慧慧</div>
+          <div class="bar-wrap"><div class="bar" style="width:97.5%"></div></div>
+          <div class="bar-value">97.45分</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">王哲</div>
+          <div class="bar-wrap"><div class="bar" style="width:97.0%"></div></div>
+          <div class="bar-value">97.0分</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">卿卿</div>
+          <div class="bar-wrap"><div class="bar" style="width:96.5%"></div></div>
+          <div class="bar-value">96.5分</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">美汐</div>
+          <div class="bar-wrap"><div class="bar" style="width:96.3%"></div></div>
+          <div class="bar-value">96.35分</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Amy</div>
+          <div class="bar-wrap"><div class="bar" style="width:95.7%"></div></div>
+          <div class="bar-value">95.68分</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">王娜</div>
+          <div class="bar-wrap"><div class="bar" style="width:95.3%"></div></div>
+          <div class="bar-value">95.32分</div>
+        </div></div>
+    <div>
+      <table><thead><tr><th>教练</th><th>问卷数</th><th>老群</th><th>新群</th><th>综合</th><th>及时</th><th>专业</th><th>耐心</th><th>帮助度</th></tr></thead><tbody><tr><td>慧慧</td><td>55</td><td>55</td><td>0</td><td>97.45</td><td>97.45</td><td>98.18</td><td>98.55</td><td>95.64</td></tr><tr><td>王哲</td><td>60</td><td>60</td><td>0</td><td>97.00</td><td>97.00</td><td>97.33</td><td>97.67</td><td>96.00</td></tr><tr><td>卿卿</td><td>80</td><td>74</td><td>6</td><td>96.50</td><td>98.00</td><td>95.00</td><td>99.00</td><td>94.00</td></tr><tr><td>美汐</td><td>37</td><td>37</td><td>0</td><td>96.35</td><td>98.38</td><td>96.22</td><td>98.38</td><td>92.43</td></tr><tr><td>Amy</td><td>66</td><td>66</td><td>0</td><td>95.68</td><td>96.67</td><td>96.97</td><td>97.88</td><td>91.21</td></tr><tr><td>王娜</td><td>47</td><td>30</td><td>17</td><td>95.32</td><td>96.60</td><td>96.17</td><td>97.45</td><td>91.06</td></tr></tbody></table>
+    </div>
+  </div>
+  <p class="small">注意：新群样本量较小，卿卿新群6份、王娜新群17份，仅适合做趋势观察，不宜单独做强结论。</p>
+</section>
+
+<section class="section">
+  <h2>四、老群用户状态</h2>
+  <div class="grid2">
+    <div class='chart'><h3>老群：看群消息频率</h3>
+        <div class="bar-row">
+          <div class="bar-label">基本每天都会看</div>
+          <div class="bar-wrap"><div class="bar" style="width:100.0%"></div></div>
+          <div class="bar-value">251人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">每周会看1-2次</div>
+          <div class="bar-wrap"><div class="bar" style="width:13.5%"></div></div>
+          <div class="bar-value">34人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">偶尔看到感兴趣的会点进去看</div>
+          <div class="bar-wrap"><div class="bar" style="width:13.1%"></div></div>
+          <div class="bar-value">33人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">基本不看了</div>
+          <div class="bar-wrap"><div class="bar" style="width:1.6%"></div></div>
+          <div class="bar-value">4人</div>
+        </div></div>
+    <div><table><thead><tr><th>选项</th><th>人数</th><th>占老群样本</th></tr></thead><tbody><tr><td>基本每天都会看</td><td>251</td><td>78.0%</td></tr><tr><td>每周会看1-2次</td><td>34</td><td>10.6%</td></tr><tr><td>偶尔看到感兴趣的会点进去看</td><td>33</td><td>10.2%</td></tr><tr><td>基本不看了</td><td>4</td><td>1.2%</td></tr></tbody></table></div>
+  </div>
+  <br>
+  <div class="grid2">
+    <div><table><thead><tr><th>老群帮助度</th><th>人数</th><th>占老群样本</th></tr></thead><tbody><tr><td>很有帮助，会继续关注</td><td>212</td><td>65.8%</td></tr><tr><td>有一些帮助，但希望内容更聚焦</td><td>59</td><td>18.3%</td></tr><tr><td>偶尔有帮助，主要看有没有刚好需要的内容</td><td>47</td><td>14.6%</td></tr><tr><td>基本没有帮助</td><td>4</td><td>1.2%</td></tr></tbody></table></div>
+    <div><table><thead><tr><th>后续运营偏好</th><th>人数</th><th>占老群样本</th></tr></thead><tbody><tr><td>保持现在节奏，有需要时我自己看</td><td>180</td><td>55.9%</td></tr><tr><td>多发一些产品搭配和使用建议</td><td>163</td><td>50.6%</td></tr><tr><td>每周整理一次重点内容，方便回看</td><td>149</td><td>46.3%</td></tr><tr><td>多发一些饮食案例/食谱参考</td><td>136</td><td>42.2%</td></tr><tr><td>多发一些优惠活动提醒</td><td>127</td><td>39.4%</td></tr><tr><td>有问题时能及时找到教练就可以</td><td>74</td><td>23.0%</td></tr><tr><td>希望消息少一点，只保留重点通知</td><td>13</td><td>4.0%</td></tr></tbody></table></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>五、新群用户需求</h2>
+  <div class="grid2">
+    <div class='chart'><h3>新群：入群目的</h3>
+        <div class="bar-row">
+          <div class="bar-label">想了解控糖、代谢健康相关知识</div>
+          <div class="bar-wrap"><div class="bar" style="width:100.0%"></div></div>
+          <div class="bar-value">15人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">想减脂、控制体重</div>
+          <div class="bar-wrap"><div class="bar" style="width:80.0%"></div></div>
+          <div class="bar-value">12人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">想知道产品怎么吃、怎么搭配</div>
+          <div class="bar-wrap"><div class="bar" style="width:73.3%"></div></div>
+          <div class="bar-value">11人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">想改善饮食习惯</div>
+          <div class="bar-wrap"><div class="bar" style="width:60.0%"></div></div>
+          <div class="bar-value">9人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">想了解低碳/生酮怎么开始</div>
+          <div class="bar-wrap"><div class="bar" style="width:60.0%"></div></div>
+          <div class="bar-value">9人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">想了解优惠活动或购买建议</div>
+          <div class="bar-wrap"><div class="bar" style="width:40.0%"></div></div>
+          <div class="bar-value">6人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">想看别人怎么吃、怎么调整</div>
+          <div class="bar-wrap"><div class="bar" style="width:26.7%"></div></div>
+          <div class="bar-value">4人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">想有人带着执行，不想自己摸索</div>
+          <div class="bar-wrap"><div class="bar" style="width:26.7%"></div></div>
+          <div class="bar-value">4人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">其他</div>
+          <div class="bar-wrap"><div class="bar" style="width:6.7%"></div></div>
+          <div class="bar-value">1人</div>
+        </div></div>
+    <div><table><thead><tr><th>入群目的</th><th>人数</th><th>占新群样本</th></tr></thead><tbody><tr><td>想了解控糖、代谢健康相关知识</td><td>15</td><td>65.2%</td></tr><tr><td>想减脂、控制体重</td><td>12</td><td>52.2%</td></tr><tr><td>想知道产品怎么吃、怎么搭配</td><td>11</td><td>47.8%</td></tr><tr><td>想改善饮食习惯</td><td>9</td><td>39.1%</td></tr><tr><td>想了解低碳/生酮怎么开始</td><td>9</td><td>39.1%</td></tr><tr><td>想了解优惠活动或购买建议</td><td>6</td><td>26.1%</td></tr><tr><td>想看别人怎么吃、怎么调整</td><td>4</td><td>17.4%</td></tr><tr><td>想有人带着执行，不想自己摸索</td><td>4</td><td>17.4%</td></tr><tr><td>其他</td><td>1</td><td>4.3%</td></tr></tbody></table></div>
+  </div>
+  <br>
+  <div class="grid2">
+    <div><table><thead><tr><th>关注内容</th><th>人数</th><th>占新群样本</th></tr></thead><tbody><tr><td>每天的科普知识</td><td>18</td><td>78.3%</td></tr><tr><td>营养补剂基础知识</td><td>15</td><td>65.2%</td></tr><tr><td>饮食建议/食谱参考</td><td>14</td><td>60.9%</td></tr><tr><td>教练每天对群友的答疑</td><td>12</td><td>52.2%</td></tr><tr><td>产品搭配和使用建议</td><td>12</td><td>52.2%</td></tr><tr><td>低碳/生酮入门知识</td><td>11</td><td>47.8%</td></tr><tr><td>优惠活动和购买提醒</td><td>9</td><td>39.1%</td></tr><tr><td>外食、聚餐、外卖、出差怎么吃</td><td>8</td><td>34.8%</td></tr><tr><td>真实用户案例</td><td>8</td><td>34.8%</td></tr></tbody></table></div>
+    <div><table><thead><tr><th>希望教练提供的帮助</th><th>人数</th><th>占新群样本</th></tr></thead><tbody><tr><td>汇总群里的重点知识</td><td>13</td><td>56.5%</td></tr><tr><td>解答低碳/生酮基础问题</td><td>9</td><td>39.1%</td></tr><tr><td>帮我理解产品怎么搭配</td><td>9</td><td>39.1%</td></tr><tr><td>提供饮食搭配建议</td><td>8</td><td>34.8%</td></tr><tr><td>提醒活动、优惠和购买方式</td><td>8</td><td>34.8%</td></tr><tr><td>看到我有问题时及时回应</td><td>7</td><td>30.4%</td></tr><tr><td>帮我判断饮食是否合适</td><td>6</td><td>26.1%</td></tr><tr><td>维持现状就很好，不需要再做什么</td><td>5</td><td>21.7%</td></tr><tr><td>暂时不需要太多指导，我先观索</td><td>1</td><td>4.3%</td></tr></tbody></table></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>六、有效建议分类</h2>
+  <div class="grid2">
+    <div class='chart'><h3>有效建议主分类</h3>
+        <div class="bar-row">
+          <div class="bar-label">专业科普/知识深度</div>
+          <div class="bar-wrap"><div class="bar" style="width:100.0%"></div></div>
+          <div class="bar-value">32人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">饮食搭配/食谱/餐谱/做法</div>
+          <div class="bar-wrap"><div class="bar" style="width:65.6%"></div></div>
+          <div class="bar-value">21人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">回复及时/人员配置/服务承接</div>
+          <div class="bar-wrap"><div class="bar" style="width:34.4%"></div></div>
+          <div class="bar-value">11人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">优惠活动/购买提醒</div>
+          <div class="bar-wrap"><div class="bar" style="width:25.0%"></div></div>
+          <div class="bar-value">8人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">产品/补剂用法与搭配</div>
+          <div class="bar-wrap"><div class="bar" style="width:25.0%"></div></div>
+          <div class="bar-value">8人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">互动/打卡/群氛围</div>
+          <div class="bar-wrap"><div class="bar" style="width:25.0%"></div></div>
+          <div class="bar-value">8人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">内容总结/重点回顾/资料沉淀</div>
+          <div class="bar-wrap"><div class="bar" style="width:21.9%"></div></div>
+          <div class="bar-value">7人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">个性化指导/一对一/针对性</div>
+          <div class="bar-wrap"><div class="bar" style="width:18.8%"></div></div>
+          <div class="bar-value">6人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">真实案例/经验反馈</div>
+          <div class="bar-wrap"><div class="bar" style="width:15.6%"></div></div>
+          <div class="bar-value">5人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">减少闲聊/刷屏/信息干扰</div>
+          <div class="bar-wrap"><div class="bar" style="width:12.5%"></div></div>
+          <div class="bar-value">4人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">新手入门/陪跑</div>
+          <div class="bar-wrap"><div class="bar" style="width:6.2%"></div></div>
+          <div class="bar-value">2人</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">其他有效建议</div>
+          <div class="bar-wrap"><div class="bar" style="width:3.1%"></div></div>
+          <div class="bar-value">1人</div>
+        </div></div>
+    <div><table><thead><tr><th>建议主分类</th><th>人数</th><th>占有效建议</th></tr></thead><tbody><tr><td>专业科普/知识深度</td><td>32</td><td>28.3%</td></tr><tr><td>饮食搭配/食谱/餐谱/做法</td><td>21</td><td>18.6%</td></tr><tr><td>回复及时/人员配置/服务承接</td><td>11</td><td>9.7%</td></tr><tr><td>优惠活动/购买提醒</td><td>8</td><td>7.1%</td></tr><tr><td>产品/补剂用法与搭配</td><td>8</td><td>7.1%</td></tr><tr><td>互动/打卡/群氛围</td><td>8</td><td>7.1%</td></tr><tr><td>内容总结/重点回顾/资料沉淀</td><td>7</td><td>6.2%</td></tr><tr><td>个性化指导/一对一/针对性</td><td>6</td><td>5.3%</td></tr><tr><td>真实案例/经验反馈</td><td>5</td><td>4.4%</td></tr><tr><td>减少闲聊/刷屏/信息干扰</td><td>4</td><td>3.5%</td></tr><tr><td>新手入门/陪跑</td><td>2</td><td>1.8%</td></tr><tr><td>其他有效建议</td><td>1</td><td>0.9%</td></tr></tbody></table></div>
+  </div>
+</section>
+
+<section class="section warn">
+  <h2>七、问卷质量与需复核项</h2>
+  <p>本表未看到独立 IP 字段，因此无法直接判断“同 IP 多份”。当前仅按手机号、提交人、低分原因、手机号格式做初筛。</p>
+  <table><thead><tr><th>初筛类型</th><th>涉及记录数</th></tr></thead><tbody><tr><td>同手机号多份</td><td>28</td></tr><tr><td>同提交人多份</td><td>24</td></tr><tr><td>手机号缺失/格式异常</td><td>12</td></tr><tr><td>低分问卷需复核</td><td>9</td></tr><tr><td>非教练因素可能影响评分</td><td>3</td></tr><tr><td>低分原因疑似非教练因素</td><td>1</td></tr></tbody></table>
+</section>
+
+<section class="section">
+  <h2>八、管理建议</h2>
+  <ul class="insights">
+    <li><b>评分使用建议：</b>绩效中可继续使用综合评分，但建议同时设“低分原因复核”机制，避免非教练因素影响评分。</li>
+    <li><b>老群运营建议：</b>不要简单判断老群无价值；老群仍有人看，但要减少用户爬楼成本，固定做周总结、产品搭配、饮食案例、重点回顾。</li>
+    <li><b>新群运营建议：</b>前2-4周更适合标准化陪跑：资料包重点提示、入门问题集中答疑、产品搭配说明、阶段性反馈收集。</li>
+    <li><b>教练动作建议：</b>帮助度低于及时性和耐心度，说明“态度好、回复快”还不够，后续要看是否有补信息、给路径、跟进闭环。</li>
+  </ul>
+</section>
+</main>
+</body>
+</html>
